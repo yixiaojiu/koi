@@ -1,0 +1,13 @@
+{
+  "extends": ["@antfu"],
+  "rules": {
+    "quote-props": "off",
+    "no-useless-return": "off",
+    "curly": "off",
+    "@typescript-eslint/brace-style": "off",
+    "n/handle-callback-err": "off",
+    "react/display-name": "off",
+    "import/order": "off",
+    "react/react-in-jsx-scope": "off"
+  }
+}
