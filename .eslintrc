@@ -8,6 +8,7 @@
     "n/handle-callback-err": "off",
     "react/display-name": "off",
     "import/order": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "no-console": "off"
   }
 }
