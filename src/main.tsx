@@ -2,10 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 
-import 'virtual:uno.css'
+import 'uno.css'
+import '@unocss/reset/tailwind.css'
+import '@/assets/css/index.css'
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+const container = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+
+container.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>,
 )
