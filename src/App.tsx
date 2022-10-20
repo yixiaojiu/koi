@@ -4,6 +4,7 @@ import ThemeConfig from './theme'
 import { AppHeader } from '@/layout/AppHeader'
 import { AppAsideBar } from '@/layout/AppAsideBar'
 import { AppMainContainer } from '@/layout/AppMainContainer'
+import { Router } from '@/router'
 
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
         <AppHeader />
         <div className="flex-1 flex gap-4">
           <AppAsideBar />
-          <AppMainContainer />
+          <AppMainContainer>
+            <Router />
+          </AppMainContainer>
         </div>
       </Box>
     </ThemeConfig>
