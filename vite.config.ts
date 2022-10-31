@@ -18,6 +18,9 @@ export default defineConfig({
   plugins: [react(),
     Unocss({
       presets: [presetUno(), presetIcons(), presetAttributify()],
+      shortcuts: {
+        center: 'flex items-center justify-center',
+      },
     }),
   ],
 })

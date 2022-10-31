@@ -1,5 +1,4 @@
 import Box from '@mui/material/Box'
-import { settingsStore } from '@/store/setting.store'
 import ThemeConfig from './theme'
 import { AppHeader } from '@/layout/AppHeader'
 import { AppAsideBar } from '@/layout/AppAsideBar'

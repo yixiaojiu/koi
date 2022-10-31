@@ -11,6 +11,9 @@ export const THEME_DARK: PaletteOptions = {
     paper: '#68c6bd',
     default: '#68c6bd',
   },
+  text: {
+    primary: '#ffffff',
+  },
 }
 
 export const THEME_PINK: PaletteOptions = {
@@ -23,5 +26,8 @@ export const THEME_PINK: PaletteOptions = {
   background: {
     paper: '#ff8c8c',
     default: '#ff8c8c',
+  },
+  text: {
+    primary: '#ff8c8c',
   },
 }

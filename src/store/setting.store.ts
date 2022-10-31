@@ -28,6 +28,10 @@ class Setting {
     }
     initMode(this.mode)
   }
+
+  get isDark() {
+    return this.mode === 'dark'
+  }
 }
 
 export const settingsStore = new Setting()

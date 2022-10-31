@@ -4,6 +4,7 @@ specifiers:
   '@antfu/eslint-config': ^0.27.0
   '@emotion/react': ^11.10.4
   '@emotion/styled': ^11.10.4
+  '@iconify-json/ic': ^1.1.9
   '@mui/material': ^5.10.9
   '@types/node': ^18.7.23
   '@types/react': ^18.0.17
@@ -37,6 +38,7 @@ dependencies:
 
 devDependencies:
   '@antfu/eslint-config': 0.27.0_7ilbxdl5iguzcjriqqcg2m5cku
+  '@iconify-json/ic': 1.1.9
   '@types/node': 18.7.23
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
@@ -602,6 +604,12 @@ packages:
 
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
+    dev: true
+
+  /@iconify-json/ic/1.1.9:
+    resolution: {integrity: sha512-yRHx4AnNNf5kpWVnNMaeXGYnLmaR2tkGsjSc//FaI7LhljUaDkiawUvmnYbjh6M61O78EeEoNk8HgYJVqb+y8A==}
+    dependencies:
+      '@iconify/types': 2.0.0
     dev: true
 
   /@iconify/types/2.0.0:

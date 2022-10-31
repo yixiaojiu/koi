@@ -4,3 +4,7 @@
 .dark {
   background-color: #1e1d2b;
 }
+
+html {
+  transition: all 0.3s ease;
+}
