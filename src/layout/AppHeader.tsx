@@ -56,9 +56,9 @@ export const AppHeader = observer(() => {
   const [settings] = useState(() => settingsStore)
   const handleToggle = () => {}
   const handleHistory = () => {}
-  return <div className="h-12 px-12 flex items-center justify-between">
+  return <div className="h-12 px-6 flex items-center justify-between">
     <IconButton onClick={handleToggle} icon='i-ic-round-menu' />
-    <div className='flex gap-10'>
+    <div className='flex gap-8 items-center'>
       <MaterialUISwitch checked={settings.isDark} onChange={() => settings.toggleMode()} />
       <IconButton onClick={handleHistory} icon='i-ic-baseline-history'/>
     </div>

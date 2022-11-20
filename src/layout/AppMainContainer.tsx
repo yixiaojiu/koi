@@ -6,5 +6,8 @@ interface Props {
 }
 
 export const AppMainContainer = (props: Props) => {
-  return <Box className="flex-1">{props.children}</Box>
+  return <Box className="flex-1 rounded-tl-6" sx={{
+    backgroundColor: 'background.default',
+    height: 'calc(100vh - 3rem);',
+  }}>{props.children}</Box>
 }

@@ -6,7 +6,7 @@ const htmlDom = document.querySelector('html')!
 const initMode = (mode: ThemeMode) => {
   htmlDom.className = mode
 }
-class Setting {
+class SettingsStore {
   mode: ThemeMode = 'light'
   constructor() {
     makeAutoObservable(this)
@@ -34,4 +34,4 @@ class Setting {
   }
 }
 
-export const settingsStore = new Setting()
+export const settingsStore = new SettingsStore()

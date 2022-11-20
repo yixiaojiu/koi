@@ -9,10 +9,11 @@ export const THEME_DARK: PaletteOptions = {
   },
   background: {
     paper: '#68c6bd',
-    default: '#68c6bd',
+    default: '#2f3042',
   },
   text: {
     primary: '#ffffff',
+    secondary: '#b4b4bb',
   },
 }
 
@@ -25,9 +26,10 @@ export const THEME_PINK: PaletteOptions = {
   },
   background: {
     paper: '#ff8c8c',
-    default: '#ff8c8c',
+    default: '#ffffff',
   },
   text: {
     primary: '#ff8c8c',
+    secondary: '#bebebe',
   },
 }

@@ -14,6 +14,7 @@
     "@mui/material": "^5.10.9",
     "@unocss/reset": "^0.45.29",
     "axios": "^0.27.2",
+    "framer-motion": "^7.6.7",
     "mobx": "^6.6.2",
     "mobx-persist-store": "^1.1.2",
     "mobx-react-lite": "^3.4.0",
