@@ -4,6 +4,7 @@ import { styled } from '@mui/material/styles'
 import { observer } from 'mobx-react-lite'
 import { settingsStore } from '@/store/setting.store'
 import { useState } from 'react'
+import { asideBarStore } from '@/store/asideBar.store'
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -54,10 +55,9 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 export const AppHeader = observer(() => {
   const [settings] = useState(() => settingsStore)
-  const handleToggle = () => {}
   const handleHistory = () => {}
   return <div className="h-12 px-6 flex items-center justify-between">
-    <IconButton onClick={handleToggle} icon='i-ic-round-menu' />
+    <IconButton onClick={() => asideBarStore.toggleAsideBar()} icon='i-ic-round-menu' />
     <div className='flex gap-8 items-center'>
       <MaterialUISwitch checked={settings.isDark} onChange={() => settings.toggleMode()} />
       <IconButton onClick={handleHistory} icon='i-ic-baseline-history'/>

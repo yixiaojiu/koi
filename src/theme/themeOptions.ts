@@ -7,6 +7,12 @@ export const THEME_DARK: PaletteOptions = {
     dark: '#1e1d2b',
     light: '#2f3042',
   },
+
+  warning: {
+    main: '#bebebe',
+    dark: '#d5d6d9',
+  },
+
   background: {
     paper: '#68c6bd',
     default: '#2f3042',
@@ -24,12 +30,16 @@ export const THEME_PINK: PaletteOptions = {
     dark: '#f5073e',
     light: '#ffb4be',
   },
+  warning: {
+    main: '#ffd2d8',
+    dark: '#ffc3cb',
+  },
   background: {
     paper: '#ff8c8c',
     default: '#ffffff',
   },
   text: {
-    primary: '#ff8c8c',
+    primary: '#ffb4be',
     secondary: '#bebebe',
   },
 }
