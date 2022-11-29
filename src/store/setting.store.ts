@@ -8,12 +8,15 @@ const initMode = (mode: ThemeMode) => {
 }
 class SettingsStore {
   mode: ThemeMode = 'light'
+  serveUrl = ''
+  isMock = true
+
   constructor() {
     makeAutoObservable(this)
 
     makePersistable(this, {
       name: '__SETTINGS__',
-      properties: ['mode'],
+      properties: ['mode', 'serveUrl', 'isMock'],
       storage: window.localStorage,
     }).then(() => {
       initMode(this.mode)
@@ -27,6 +30,10 @@ class SettingsStore {
       this.mode = 'light'
     }
     initMode(this.mode)
+  }
+
+  changeServeUrl(url: string) {
+    this.serveUrl = url
   }
 
   get isDark() {
