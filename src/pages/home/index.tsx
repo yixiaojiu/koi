@@ -1,20 +1,19 @@
 import { Box, Button } from '@mui/material'
 import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { getIndex } from '@/service/api/anime'
 import { observer } from 'mobx-react-lite'
 import { settingsStore } from '@/store/setting.store'
 
 const View = observer(() => {
-  console.log('aaa')
   const [settings] = useState(() => settingsStore)
-  useEffect(() => {
-    getIndex().then(({ data }) => {
-      console.log(data)
-    })
-  })
+  const handleClick = async () => {
+    const { data } = await getIndex()
+    console.log(data)
+  }
   return (<>
     <Button onClick={() => settings.changeServeUrl('https://koi-api.vercel.app')} className='m-4'>更改地址</Button>
+    <Button onClick={handleClick}>发送请求</Button>
     <p>{settings.serveUrl}</p>
     </>
   )

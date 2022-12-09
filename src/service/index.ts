@@ -12,9 +12,18 @@ autorun(() => {
     baseURL: settingsStore.serveUrl,
   })
 
-  axiosInstance.interceptors.response.use((res) => {
+  axiosInstance.interceptors.request.use(async (config) => {
     if (settingsStore.isMock) {
-      res.data = handleMockData(res.request.responseURL)
+      config.baseURL = ''
+    }
+    return config
+  }, (error) => {
+    return Promise.reject(error)
+  })
+
+  axiosInstance.interceptors.response.use(async (res) => {
+    if (settingsStore.isMock) {
+      res.data = await handleMockData(res.request.responseURL)
     }
     return res
   }, (error) => {

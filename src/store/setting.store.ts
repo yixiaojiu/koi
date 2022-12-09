@@ -7,8 +7,11 @@ const initMode = (mode: ThemeMode) => {
   htmlDom.className = mode
 }
 class SettingsStore {
+  // 主题模式
   mode: ThemeMode = 'light'
+  // 爬虫地址
   serveUrl = ''
+  // 是否使用mock 数据
   isMock = true
 
   constructor() {
