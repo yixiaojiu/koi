@@ -1,10 +1,10 @@
 export interface GetIndexResponse {
   code: number
   msg: string
-  data: Data
+  data: IndexData
 }
 
-export interface Data {
+export interface IndexData {
   banners: Banner[]
   perweeks: Perweek[][]
   categoryAnimes: CategoryAnime[]

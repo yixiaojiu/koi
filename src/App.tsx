@@ -1,13 +1,17 @@
 import Box from '@mui/material/Box'
 import ThemeConfig from './theme'
 import { Router } from '@/router'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 function App() {
+  const queryClient = new QueryClient()
   return (
     <ThemeConfig>
-      <Box className="h-screen flex flex-col overflow-hidden">
-        <Router />
-      </Box>
+      <QueryClientProvider client={queryClient}>
+        <Box className="h-screen flex flex-col overflow-hidden">
+          <Router />
+        </Box>
+      </QueryClientProvider>
     </ThemeConfig>
   )
 }

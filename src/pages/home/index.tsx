@@ -1,11 +1,27 @@
 import { Box, Button } from '@mui/material'
 import { observer } from 'mobx-react-lite'
+import { getIndex } from '@/service/api/anime'
+import { useQuery } from '@tanstack/react-query'
+import { useState } from 'react'
 
 const Content = observer(() => {
+  const [num, setNum] = useState(0)
+  const { isLoading, data } = useQuery({
+    queryKey: ['getIndex'],
+    queryFn: async () => {
+      const { data } = await getIndex()
+      console.log(data)
+      return data.data
+    },
+  })
   return (<>
-    <div className='font-anek text-2xl'>发生科技发达风纪扣打算减肥</div>
-    <div className='font-anek text-lg font-normal '>发生科技发达风纪扣打算减肥</div>
-    <div className='text-2xl font-normal'>发生科技发达风纪扣打算减肥</div>
+    <div>
+      {
+        isLoading ? 'true' : 'false'
+      }
+    </div>
+    <div>{num}</div>
+    <Button variant='contained' onClick={() => setNum(num + 1)}>+1</Button>
     </>
   )
 })
