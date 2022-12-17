@@ -1,33 +1,33 @@
-import { Box, Button } from '@mui/material'
 import { observer } from 'mobx-react-lite'
 import { getIndex } from '@/service/api/anime'
 import { useQuery } from '@tanstack/react-query'
-import { useState } from 'react'
+import { PageLoading } from '@/components/loading/PageLoading'
+import { HomeBanner } from '@/pages/home/component/home-banner/HomeBanner'
 
 const Content = observer(() => {
-  const [num, setNum] = useState(0)
-  const { isLoading, data } = useQuery({
+  const { isLoading } = useQuery({
     queryKey: ['getIndex'],
     queryFn: async () => {
       const { data } = await getIndex()
-      console.log(data)
       return data.data
     },
+    staleTime: Infinity,
   })
-  return (<>
-    <div>
-      {
-        isLoading ? 'true' : 'false'
-      }
-    </div>
-    <div>{num}</div>
-    <Button variant='contained' onClick={() => setNum(num + 1)}>+1</Button>
+  return (
+    <>
+      {isLoading
+        ? (
+        <PageLoading />
+          )
+        : (
+        <div>
+          <HomeBanner />
+        </div>
+          )}
     </>
   )
 })
 
 export default function Home() {
-  return (
-     <Content />
-  )
+  return <Content />
 }

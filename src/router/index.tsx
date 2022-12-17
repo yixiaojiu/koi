@@ -1,4 +1,3 @@
-import { Loading } from '@/components/loading/Loading'
 import type { LazyExoticComponent } from 'react'
 import { Suspense, lazy } from 'react'
 import { Navigate, RouterProvider, createHashRouter } from 'react-router-dom'
@@ -6,7 +5,7 @@ import { RouterGuard } from '@/router/guard/routerGuard'
 
 const Loadable = (Component: LazyExoticComponent<any>) => (props: Record<string, any>) => {
   return (
-    <Suspense fallback={<Loading />}>
+    <Suspense fallback={<div />}>
       <Component {...props} />
     </Suspense>
   )

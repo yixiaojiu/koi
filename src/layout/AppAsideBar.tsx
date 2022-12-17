@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { observer } from 'mobx-react-lite'
 import { asideBarStore } from '@/store/asideBar.store'
 import { useState } from 'react'
+import { WEB_NAME } from '@/shared/constant'
 
 export const AppAsideBar = observer(() => {
   const navigate = useNavigate()
@@ -42,10 +43,7 @@ export const AppAsideBar = observer(() => {
   })
 
   return (
-    <motion.div
-      className="w-[240px] relative"
-      animate={{ width: asideBar.open ? 240 : 40 }}
-    >
+    <motion.div className="w-[240px] relative" animate={{ width: asideBar.open ? 240 : 40 }}>
       <motion.div
         className="w-[240px] absolute top-0 left-0"
         animate={{ x: asideBar.open ? 0 : -200 }}
@@ -67,7 +65,7 @@ export const AppAsideBar = observer(() => {
               fontWeight: '700',
             }}
           >
-            Koi
+            {WEB_NAME}
           </Typography>
           <ul className="relative">
             <motion.li

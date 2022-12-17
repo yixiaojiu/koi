@@ -5,12 +5,14 @@ import { AppAsideBar } from '@/layout/AppAsideBar'
 import { AppMainContainer } from '@/layout/AppMainContainer'
 import { asideBarStore } from '@/store/asideBar.store'
 import { useEffect, useState } from 'react'
+import { handleTitle } from '@/shared/title'
 
 export const RouterGuard = observer(() => {
   const location = useLocation()
   const [asideBar] = useState(() => asideBarStore)
   useEffect(() => {
     asideBar.setPathname(location.pathname)
+    handleTitle(location.pathname)
   }, [location.pathname])
   return (
     <>
