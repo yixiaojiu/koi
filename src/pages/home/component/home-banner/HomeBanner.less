@@ -1,0 +1,26 @@
+.banner-enter,
+.banner-appear {
+  transform: translateX(100%);
+}
+.banner-enter-active,
+.banner-appear-active {
+  transform: translateX(0);
+  transition: transform 1000ms ease-in-out;
+}
+.banner-enter-done,
+.banner-appear-done {
+  transform: translateX(0);
+}
+
+.banner-exit {
+  transform: translateX(0);
+}
+
+.banner-exit-active {
+  transform: translateX(-100%);
+  transition: transform 1000ms ease-in-out;
+}
+
+.banner-exit-done {
+  transform: translateX(-100%);
+}
