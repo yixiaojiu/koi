@@ -8,6 +8,8 @@ export interface IndexData {
   banners: Banner[]
   perweeks: Perweek[][]
   categoryAnimes: CategoryAnime[]
+  hot: Anime[]
+  recent: Anime[]
 }
 
 export interface Banner {
@@ -24,10 +26,10 @@ export interface Perweek {
 
 export interface CategoryAnime {
   name: string
-  list: List[]
+  list: Anime[]
 }
 
-export interface List {
+export interface Anime {
   cover: string
   id: string
   title: string

@@ -1,4 +1,4 @@
-import type { PaletteOptions } from '@mui/material/styles'
+import type { Components, PaletteOptions, Theme } from '@mui/material/styles'
 
 export const THEME_DARK: PaletteOptions = {
   mode: 'dark',
@@ -42,4 +42,7 @@ export const THEME_PINK: PaletteOptions = {
     primary: '#ffb4be',
     secondary: '#bebebe',
   },
+}
+
+export const THEME_COMPONENTS: Components<Omit<Theme, 'components'>> = {
 }

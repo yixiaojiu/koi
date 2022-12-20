@@ -562,66 +562,119 @@
       }
     ]
   ],
-  "categoryAnimes": [
+  "hot": [
     {
-      "name": "最新更新",
-      "list": [
-        {
-          "cover": "https://tva4.sinaimg.cn/large/9a6d8579gy1h5lfqn3xqdj205i07ngm1.jpg",
-          "id": "24081",
-          "title": "秋叶原冥途战争",
-          "season": "第10集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008ufEQzgy1h6ytnciyp2j305i07n3yr.jpg",
-          "id": "23908",
-          "title": "书虫公主",
-          "season": "第10集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/9a6d8579gy1h5b7bss5k8j205i07nt90.jpg",
-          "id": "23959",
-          "title": "Do It Yourself!!",
-          "season": "第10集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/9a6d8579gy1h5mtdap7btj205i07nwet.jpg",
-          "id": "23857",
-          "title": "Muv-Luv Alternative 第二季",
-          "season": "第22集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008ufEQzgy1h74cixx8jyj305i07nq3b.jpg",
-          "id": "24153",
-          "title": "人类毛病大学 -不死学部不幸学科-",
-          "season": "第10集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008ufEQzgy1h71kfdvi3lj305i07ndg5.jpg",
-          "id": "23791",
-          "title": "路人超能100 第三季",
-          "season": "00:00 第10集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008v6dp8gy1h61zp2x6x0j305i07n74n.jpg",
-          "id": "23947",
-          "title": "不道德公会",
-          "season": "00:00 第10集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008ufEQzgy1h6ytnwdf2kj305i07nglx.jpg",
-          "id": "23957",
-          "title": "恋爱FLOPS",
-          "season": "00:05 第9集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008v6dp8gy1h6mtmv8ql8j305i07nq35.jpg",
-          "id": "23785",
-          "title": "转生成为魔剑",
-          "season": "23:30 第11集"
-        }
-      ]
+      "cover": "https://tva4.sinaimg.cn/large/9a6d8579gy1h5lfqn3xqdj205i07ngm1.jpg",
+      "id": "24081",
+      "title": "秋叶原冥途战争",
+      "season": "第10集"
     },
+    {
+      "cover": "https://tva4.sinaimg.cn/large/008ufEQzgy1h6ytnciyp2j305i07n3yr.jpg",
+      "id": "23908",
+      "title": "书虫公主",
+      "season": "第10集"
+    },
+    {
+      "cover": "https://tva4.sinaimg.cn/large/9a6d8579gy1h5b7bss5k8j205i07nt90.jpg",
+      "id": "23959",
+      "title": "Do It Yourself!!",
+      "season": "第10集"
+    },
+    {
+      "cover": "https://tva4.sinaimg.cn/large/9a6d8579gy1h5mtdap7btj205i07nwet.jpg",
+      "id": "23857",
+      "title": "Muv-Luv Alternative 第二季",
+      "season": "第22集"
+    },
+    {
+      "cover": "https://tva4.sinaimg.cn/large/008ufEQzgy1h74cixx8jyj305i07nq3b.jpg",
+      "id": "24153",
+      "title": "人类毛病大学 -不死学部不幸学科-",
+      "season": "第10集"
+    },
+    {
+      "cover": "https://tva4.sinaimg.cn/large/008ufEQzgy1h71kfdvi3lj305i07ndg5.jpg",
+      "id": "23791",
+      "title": "路人超能100 第三季",
+      "season": "00:00 第10集"
+    },
+    {
+      "cover": "https://tva4.sinaimg.cn/large/008v6dp8gy1h61zp2x6x0j305i07n74n.jpg",
+      "id": "23947",
+      "title": "不道德公会",
+      "season": "00:00 第10集"
+    },
+    {
+      "cover": "https://tva4.sinaimg.cn/large/008ufEQzgy1h6ytnwdf2kj305i07nglx.jpg",
+      "id": "23957",
+      "title": "恋爱FLOPS",
+      "season": "00:05 第9集"
+    },
+    {
+      "cover": "https://tva4.sinaimg.cn/large/008v6dp8gy1h6mtmv8ql8j305i07nq35.jpg",
+      "id": "23785",
+      "title": "转生成为魔剑",
+      "season": "23:30 第11集"
+    }
+  ],
+  "recent": [
+    {
+      "cover": "https://tva4.sinaimg.cn/large/9a6d8579gy1h5lfqn3xqdj205i07ngm1.jpg",
+      "id": "24081",
+      "title": "秋叶原冥途战争",
+      "season": "第10集"
+    },
+    {
+      "cover": "https://tva4.sinaimg.cn/large/008ufEQzgy1h6ytnciyp2j305i07n3yr.jpg",
+      "id": "23908",
+      "title": "书虫公主",
+      "season": "第10集"
+    },
+    {
+      "cover": "https://tva4.sinaimg.cn/large/9a6d8579gy1h5b7bss5k8j205i07nt90.jpg",
+      "id": "23959",
+      "title": "Do It Yourself!!",
+      "season": "第10集"
+    },
+    {
+      "cover": "https://tva4.sinaimg.cn/large/9a6d8579gy1h5mtdap7btj205i07nwet.jpg",
+      "id": "23857",
+      "title": "Muv-Luv Alternative 第二季",
+      "season": "第22集"
+    },
+    {
+      "cover": "https://tva4.sinaimg.cn/large/008ufEQzgy1h74cixx8jyj305i07nq3b.jpg",
+      "id": "24153",
+      "title": "人类毛病大学 -不死学部不幸学科-",
+      "season": "第10集"
+    },
+    {
+      "cover": "https://tva4.sinaimg.cn/large/008ufEQzgy1h71kfdvi3lj305i07ndg5.jpg",
+      "id": "23791",
+      "title": "路人超能100 第三季",
+      "season": "00:00 第10集"
+    },
+    {
+      "cover": "https://tva4.sinaimg.cn/large/008v6dp8gy1h61zp2x6x0j305i07n74n.jpg",
+      "id": "23947",
+      "title": "不道德公会",
+      "season": "00:00 第10集"
+    },
+    {
+      "cover": "https://tva4.sinaimg.cn/large/008ufEQzgy1h6ytnwdf2kj305i07nglx.jpg",
+      "id": "23957",
+      "title": "恋爱FLOPS",
+      "season": "00:05 第9集"
+    },
+    {
+      "cover": "https://tva4.sinaimg.cn/large/008v6dp8gy1h6mtmv8ql8j305i07nq35.jpg",
+      "id": "23785",
+      "title": "转生成为魔剑",
+      "season": "23:30 第11集"
+    }
+  ],
+  "categoryAnimes": [
     {
       "name": "国产动漫",
       "list": [

@@ -1,5 +1,5 @@
 import { makeAutoObservable } from 'mobx'
-import type { ThemeMode } from '@/shared/types/theme/theme'
+import type { ThemeMode } from '@/shared/types/theme'
 import { makePersistable } from 'mobx-persist-store'
 
 const htmlDom = document.querySelector('html')!

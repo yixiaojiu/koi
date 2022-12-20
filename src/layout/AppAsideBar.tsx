@@ -31,9 +31,10 @@ export const AppAsideBar = observer(() => {
         <Typography
           variant="subtitle1"
           sx={{
-            color: 'text.secondary',
+            color: index === asideBar.pointerIndex ? 'text.primary' : 'text.secondary',
             fontWeight: '500',
             marginLeft: '1.75rem',
+            fontFamily: 'SmileySans',
           }}
         >
           {item.name}
@@ -63,6 +64,8 @@ export const AppAsideBar = observer(() => {
               fontSize: '30px',
               lineHeight: '120px',
               fontWeight: '700',
+              fontFamily: 'SmileySans',
+              letterSpacing: '0.1em',
             }}
           >
             {WEB_NAME}
@@ -77,7 +80,7 @@ export const AppAsideBar = observer(() => {
                 sx={{
                   backgroundColor: 'background.paper',
                 }}
-              ></Box>
+              />
             </motion.li>
             {AsideBar}
           </ul>

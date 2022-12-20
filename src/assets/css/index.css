@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'SmileySans';
+  src: url('@/assets/font/SmileySans-Oblique.otf.woff2') format('woff2'),
+    url('@/assets/font/SmileySans-Oblique.ttf.woff2') format('woff2');
+}
+
 .light {
   background-color: #efeff4;
 }
@@ -10,5 +16,11 @@ html {
 }
 
 * {
-  box-sizing: border-box;
+  font-family: SmileySans, 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+
+button {
+  border: 0;
+  outline: none;
+  font-family: SmileySans, 'Roboto', 'Helvetica', 'Arial', sans-serif;
 }

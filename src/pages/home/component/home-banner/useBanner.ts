@@ -1,25 +1,39 @@
 import { useQueryClient } from '@tanstack/react-query'
 import type { IndexData } from '@/service/types/getIndex'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export const useBanner = (timer: number) => {
+  const isFirstRender = useRef(true)
   const queryClient = useQueryClient()
   const banners = queryClient.getQueryData<IndexData>(['getIndex'])!.banners
-  const [bannerItem, setBannerItem] = useState(banners[0])
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setBannerItem((bannerItem) => {
-        const index = banners.findIndex(item => item.id === bannerItem.id)
-        if (index === banners.length - 1) {
-          return banners[0]
+  const [inProp, setInProp] = useState(true)
+  const [bannerIndex, setBannerIndex] = useState(0)
+  const onEntered = () => {
+    setInProp(false)
+    if (!isFirstRender.current) {
+      setBannerIndex((bannerIndex) => {
+        if (bannerIndex === banners.length - 1) {
+          return 0
         } else {
-          return banners[index + 1]
+          return bannerIndex + 1
         }
       })
+    } else {
+      isFirstRender.current = false
+    }
+  }
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setInProp(true)
     }, timer)
     return () => {
       clearInterval(interval)
     }
   }, [])
-  return bannerItem
+  return {
+    currentBanner: banners[bannerIndex],
+    nextBanner: bannerIndex === banners.length - 1 ? banners[0] : banners[bannerIndex + 1],
+    inProp,
+    onEntered,
+  }
 }
