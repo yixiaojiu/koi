@@ -50,7 +50,7 @@ export const AppAsideBar = observer(() => {
         animate={{ x: asideBar.open ? 0 : -200 }}
       >
         <Box
-          className="w-full rounded-r-6 relative"
+          className="w-full rounded-r-6 relative min-h-[400px]"
           sx={{
             backgroundColor: 'background.default',
             height: 'calc(100vh - 6rem);',

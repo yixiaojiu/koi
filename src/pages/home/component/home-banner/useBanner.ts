@@ -1,11 +1,8 @@
-import { useQueryClient } from '@tanstack/react-query'
-import type { IndexData } from '@/service/types/getIndex'
+import type { Banner } from '@/service/types/getIndex'
 import { useEffect, useRef, useState } from 'react'
 
-export const useBanner = (timer: number) => {
+export const useBanner = (timer: number, banners: Banner[]) => {
   const isFirstRender = useRef(true)
-  const queryClient = useQueryClient()
-  const banners = queryClient.getQueryData<IndexData>(['getIndex'])!.banners
   const [inProp, setInProp] = useState(true)
   const [bannerIndex, setBannerIndex] = useState(0)
   const onEntered = () => {
