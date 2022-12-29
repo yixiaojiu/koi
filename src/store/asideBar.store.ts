@@ -18,7 +18,7 @@ class AsideBarStore {
   }
 
   get pointerIndex() {
-    return asideBarItems.findIndex(item => item.path === this.pathname)
+    return asideBarItems.findIndex((item) => item.path === this.pathname)
   }
 }
 

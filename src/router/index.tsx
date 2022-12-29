@@ -37,4 +37,4 @@ export const router = createHashRouter([
   },
 ])
 
-export const Router = () => <RouterProvider router={router}/>
+export const Router = () => <RouterProvider router={router} />

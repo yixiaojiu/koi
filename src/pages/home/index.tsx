@@ -15,15 +15,13 @@ const Content = observer(() => {
   })
   return (
     <>
-      {isLoading
-        ? (
+      {isLoading ? (
         <PageLoading />
-          )
-        : (
+      ) : (
         <div>
           <HomeBanner />
         </div>
-          )}
+      )}
     </>
   )
 })

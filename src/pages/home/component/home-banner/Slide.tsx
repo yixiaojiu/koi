@@ -29,10 +29,7 @@ const Arrow = (props: { icon: string; onClick: () => void; className?: string })
 
 export const Slide = (props: { animes: Anime[] }) => {
   const liElement = useRef<HTMLImageElement>(null)
-  const { translateX, activeIndex, back, forward, canForward, canBack } = useSlide(
-    liElement,
-    props.animes.length,
-  )
+  const { translateX, activeIndex, back, forward, canForward, canBack } = useSlide(liElement, props.animes.length)
 
   const handlePlayClick = (id: string) => {
     // TODO

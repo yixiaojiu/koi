@@ -44,5 +44,4 @@ export const THEME_PINK: PaletteOptions = {
   },
 }
 
-export const THEME_COMPONENTS: Components<Omit<Theme, 'components'>> = {
-}
+export const THEME_COMPONENTS: Components<Omit<Theme, 'components'>> = {}

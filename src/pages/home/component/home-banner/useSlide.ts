@@ -17,11 +17,11 @@ export const useSlide = (nodeRef: RefObject<HTMLImageElement>, slideLength: numb
   const translateX = useMemo(() => -(activeIndex * (slideWidth + GAP_WIDTH)), [slideWidth, activeIndex])
 
   const back = () => {
-    setActiveIndex(activeIndex => activeIndex === 0 ? 0 : activeIndex - 1)
+    setActiveIndex((activeIndex) => (activeIndex === 0 ? 0 : activeIndex - 1))
   }
 
   const forward = () => {
-    setActiveIndex(activeIndex => activeIndex === slideLength - 1 ? activeIndex : activeIndex + 1)
+    setActiveIndex((activeIndex) => (activeIndex === slideLength - 1 ? activeIndex : activeIndex + 1))
   }
 
   const canForward = () => activeIndex !== slideLength - 1

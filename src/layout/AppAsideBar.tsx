@@ -45,10 +45,7 @@ export const AppAsideBar = observer(() => {
 
   return (
     <motion.div className="w-[240px] relative" animate={{ width: asideBar.open ? 240 : 40 }}>
-      <motion.div
-        className="w-[240px] absolute top-0 left-0"
-        animate={{ x: asideBar.open ? 0 : -200 }}
-      >
+      <motion.div className="w-[240px] absolute top-0 left-0" animate={{ x: asideBar.open ? 0 : -200 }}>
         <Box
           className="w-full rounded-r-6 relative min-h-[400px]"
           sx={{
@@ -71,10 +68,7 @@ export const AppAsideBar = observer(() => {
             {WEB_NAME}
           </Typography>
           <ul className="relative">
-            <motion.li
-              className="absolute top-0 left-0 h-12 w-[58px]"
-              animate={{ y: asideBar.pointerIndex * 48 }}
-            >
+            <motion.li className="absolute top-0 left-0 h-12 w-[58px]" animate={{ y: asideBar.pointerIndex * 48 }}>
               <Box
                 className="w-full h-full rounded-r-3"
                 sx={{

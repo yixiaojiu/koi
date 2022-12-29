@@ -11,5 +11,5 @@ const container = ReactDOM.createRoot(document.getElementById('root') as HTMLEle
 container.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
 )
