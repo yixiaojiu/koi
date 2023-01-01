@@ -1,4 +1,5 @@
 import type { Components, PaletteOptions, Theme } from '@mui/material/styles'
+import { MuiTypography } from '@/theme/components/MuiTypography'
 
 export const THEME_DARK: PaletteOptions = {
   mode: 'dark',
@@ -21,6 +22,9 @@ export const THEME_DARK: PaletteOptions = {
     primary: '#ffffff',
     secondary: '#b4b4bb',
   },
+  secondary: {
+    main: '#1e1d2b',
+  },
 }
 
 export const THEME_PINK: PaletteOptions = {
@@ -42,6 +46,11 @@ export const THEME_PINK: PaletteOptions = {
     primary: '#ffb4be',
     secondary: '#bebebe',
   },
+  secondary: {
+    main: '#efeff4',
+  },
 }
 
-export const THEME_COMPONENTS: Components<Omit<Theme, 'components'>> = {}
+export const THEME_COMPONENTS: Components<Omit<Theme, 'components'>> = {
+  MuiTypography,
+}

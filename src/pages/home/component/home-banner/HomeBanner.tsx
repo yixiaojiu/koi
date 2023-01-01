@@ -31,7 +31,7 @@ export const HomeBanner = () => {
         </div>
         <div className="home-banner-info absolute flex items-center z-0 left-0 top-0 h-4/7 w-full p-10">
           <div className="home-banner-info-container">
-            <h2 className="text-neutral-50 mb-4 text-8">{currentBanner.title}</h2>
+            <h2 className="text-neutral-50 mb-4 text-8 font-bold">{currentBanner.title}</h2>
             <p className="text-gray-300 w-3/5 text-sm">
               在那笑容的前方可以看见未来。是光明地闪耀着的未来。尽管处于这种情况之下。那已经可以称之为奇迹了。
             </p>
