@@ -1,10 +1,10 @@
-export interface GetIndexResponse {
+export interface GetHomeResponse {
   code: number
   msg: string
-  data: IndexData
+  data: HomeData
 }
 
-export interface IndexData {
+export interface HomeData {
   banners: Banner[]
   perweeks: Perweek[][]
   categoryAnimes: CategoryAnime[]

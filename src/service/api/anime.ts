@@ -1,13 +1,13 @@
 import { axios } from '@/service'
-import type { GetIndexResponse } from '@/service/types/getIndex'
+import type { GetHomeResponse } from '@/service/types/getHome'
 import type { SearchResponse } from '@/service/types/search'
 import type { FilterOptionsResponse } from '@/service/types/filterOptons'
 import type { FilterDto, FilterResponse } from '@/service/types/filter'
 import type { GetAnimeResponse } from '@/service/types/getAnime'
 import type { GetVideoResponse } from '@/service/types/getVideo'
 
-export function getIndex() {
-  return axios.get<GetIndexResponse>('/getIndex')
+export function getHome() {
+  return axios.get<GetHomeResponse>('/home')
 }
 
 export function search(keyword: string) {

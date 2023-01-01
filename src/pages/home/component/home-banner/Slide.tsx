@@ -1,4 +1,4 @@
-import type { Anime } from '@/service/types/getIndex'
+import type { Anime } from '@/service/types/getHome'
 import { useRef } from 'react'
 import { IconButton } from '@/components/button/IconButton'
 import '@/pages/home/component/home-banner/Slide.less'

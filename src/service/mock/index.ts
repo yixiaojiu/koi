@@ -1,5 +1,5 @@
 const pathnameMap: { [key: string]: Function } = {
-  '/getIndex': () => import('@/service/mock/data/getIndex.json'),
+  '/home': () => import('@/service/mock/data/getHome.json'),
 }
 
 export async function handleMockData(url: string) {

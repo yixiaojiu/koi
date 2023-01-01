@@ -7,16 +7,16 @@ import { OutLinedRoundButton } from '@/components/button/OutLinedRoundButton'
 import { TabLi } from '@/pages/home/component/home-banner/TabLi'
 import { Slide } from '@/pages/home/component/home-banner/Slide'
 import { useQueryClient } from '@tanstack/react-query'
-import type { IndexData } from '@/service/types/getIndex'
+import type { HomeData } from '@/service/types/getHome'
 
 type Tab = 'hot' | 'recent'
 
 export const HomeBanner = () => {
   const queryClient = useQueryClient()
-  const indexData = queryClient.getQueryData<IndexData>(['getIndex'])!
-  const banners = indexData.banners
-  const hot = indexData.hot
-  const recent = indexData.recent
+  const HomeData = queryClient.getQueryData<HomeData>(['home'])!
+  const banners = HomeData.banners
+  const hot = HomeData.hot
+  const recent = HomeData.recent
 
   const { currentBanner, nextBanner, inProp, onEntered } = useBanner(6000, banners)
   const nodeRef = useRef(null)

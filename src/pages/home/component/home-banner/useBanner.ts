@@ -1,4 +1,4 @@
-import type { Banner } from '@/service/types/getIndex'
+import type { Banner } from '@/service/types/getHome'
 import { useEffect, useRef, useState } from 'react'
 
 export const useBanner = (timer: number, banners: Banner[]) => {
