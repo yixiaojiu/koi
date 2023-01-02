@@ -19,7 +19,7 @@ const Content = observer(() => {
       {isLoading ? (
         <PageLoading />
       ) : (
-        <div>
+        <div className="min-h-full">
           <HomeBanner />
           <HomeArticle />
         </div>

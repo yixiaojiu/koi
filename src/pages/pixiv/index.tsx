@@ -2,7 +2,7 @@ import { Box } from '@mui/material'
 
 export default function Pixiv() {
   return (
-    <>
+    <div>
       <div className="flex m-4">
         <Box className="w-30 h-10" sx={{ backgroundColor: 'primary.main' }}>
           primary.main
@@ -39,6 +39,6 @@ export default function Pixiv() {
         <Box className="w-30 h-10 bg-[#003892]" />
         <Box className="w-30 h-10 bg-[#001e3c]" />
       </div>
-    </>
+    </div>
   )
 }

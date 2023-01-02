@@ -29,11 +29,8 @@ export const router = createHashRouter([
       { path: 'user', element: <User /> },
       { path: 'pixiv', element: <Pixiv /> },
       { path: 'setting', element: <Setting /> },
+      { path: '*', element: <NotFounded /> },
     ],
-  },
-  {
-    path: '*',
-    element: <NotFounded />,
   },
 ])
 

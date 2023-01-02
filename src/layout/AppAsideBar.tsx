@@ -4,12 +4,32 @@ import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { observer } from 'mobx-react-lite'
 import { asideBarStore } from '@/store/asideBar.store'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { WEB_NAME } from '@/shared/constant'
 
 export const AppAsideBar = observer(() => {
   const navigate = useNavigate()
   const [asideBar] = useState(() => asideBarStore)
+  // 控制active bar的位置
+  const [translate, setTranslate] = useState({
+    x: asideBar.pointerIndex === -1 ? -58 : 0,
+    y: asideBar.pointerIndex * 48,
+  })
+  useEffect(() => {
+    setTranslate((translate) => {
+      if (asideBar.pointerIndex === -1) {
+        return {
+          ...translate,
+          x: -60,
+        }
+      } else {
+        return {
+          x: 0,
+          y: asideBar.pointerIndex * 48,
+        }
+      }
+    })
+  }, [asideBar.pointerIndex])
 
   const handleRouterClick = (path: string) => {
     navigate(path)
@@ -68,7 +88,7 @@ export const AppAsideBar = observer(() => {
             {WEB_NAME}
           </Typography>
           <ul className="relative">
-            <motion.li className="absolute top-0 left-0 h-12 w-[58px]" animate={{ y: asideBar.pointerIndex * 48 }}>
+            <motion.li className="absolute top-0 left-0 h-12 w-[58px]" animate={translate}>
               <Box
                 className="w-full h-full rounded-r-3"
                 sx={{

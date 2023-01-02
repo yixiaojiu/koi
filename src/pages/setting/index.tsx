@@ -1,3 +1,3 @@
 export default function Setting() {
-  return <div>setting</div>
+  return <div className="min-h-full">setting</div>
 }
