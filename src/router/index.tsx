@@ -1,5 +1,5 @@
-import type { LazyExoticComponent } from 'react'
-import { Suspense, lazy, createRef, RefObject } from 'react'
+import type { LazyExoticComponent, RefObject } from 'react'
+import { Suspense, lazy, createRef, memo } from 'react'
 import { Navigate, RouterProvider, createHashRouter, IndexRouteObject, NonIndexRouteObject } from 'react-router-dom'
 import { RouterGuard } from '@/router/guard/routerGuard'
 import { Override } from '@/shared/types/utils'
@@ -19,11 +19,11 @@ const Loadable = (Component: LazyExoticComponent<any>) => (props: Record<string,
   )
 }
 
-const Home = Loadable(lazy(() => import('@/pages/home/index')))
-const Search = Loadable(lazy(() => import('@/pages/search/index')))
-const User = Loadable(lazy(() => import('@/pages/user/index')))
-const Pixiv = Loadable(lazy(() => import('@/pages/pixiv/index')))
-const Setting = Loadable(lazy(() => import('@/pages/setting/index')))
+const Home = memo(Loadable(lazy(() => import('@/pages/home/index'))))
+const Search = memo(Loadable(lazy(() => import('@/pages/search/index'))))
+const User = memo(Loadable(lazy(() => import('@/pages/user/index'))))
+const Pixiv = memo(Loadable(lazy(() => import('@/pages/pixiv/index'))))
+const Setting = memo(Loadable(lazy(() => import('@/pages/setting/index'))))
 const NotFounded = Loadable(lazy(() => import('@/pages/404/index')))
 
 export const routes: CustomRouteObject[] = [

@@ -3,29 +3,13 @@ import { useLocation, useOutlet } from 'react-router-dom'
 import { AppHeader } from '@/layout/AppHeader'
 import { AppAsideBar } from '@/layout/AppAsideBar'
 import { AppMainContainer } from '@/layout/AppMainContainer'
-import { asideBarStore, ChangeDirection } from '@/store/asideBar.store'
-import { useEffect, useState, CSSProperties, createRef } from 'react'
+import { asideBarStore } from '@/store/asideBar.store'
+import { useEffect, useState } from 'react'
 import { handleTitle } from '@/shared/title'
-import { SwitchTransition, Transition, TransitionStatus } from 'react-transition-group'
+import { SwitchTransition, CSSTransition } from 'react-transition-group'
 import { routes, CustomNonIndexRouteObject } from '@/router/index'
-
-function getTransitonStyles(direction: ChangeDirection): Record<TransitionStatus, CSSProperties> {
-  return {
-    entering: {
-      transform: 'translateY(0)',
-    },
-    entered: {
-      transform: 'translateY(0)',
-    },
-    exiting: {
-      transform: `${direction === 'up' ? 'translateY(100%)' : 'translateY(-100%)'}`,
-    },
-    exited: {
-      transform: `${direction === 'up' ? 'translateY(-100%)' : 'translateY(100%)'}`,
-    },
-    unmounted: {},
-  }
-}
+import { ScrollbarBox } from '@/components/box/ScrollbarBox'
+import '@/router/guard/RouterTransition.less'
 
 export const RouterGuard = observer(() => {
   const location = useLocation()
@@ -48,17 +32,20 @@ export const RouterGuard = observer(() => {
         <AppAsideBar />
         <AppMainContainer>
           <SwitchTransition>
-            <Transition key={location.pathname} timeout={150} unmountOnExit nodeRef={nodeRef && null}>
-              {(state) => (
-                <div
-                  className="transition ease-in-out absolute h-full w-full top-0 left-0"
-                  ref={nodeRef && null}
-                  style={getTransitonStyles(asideBar.changeDirection)[state]}
-                >
-                  {currentOutlet}
-                </div>
-              )}
-            </Transition>
+            <CSSTransition
+              key={location.pathname}
+              classNames={asideBar.changeDirection === 'up' ? 'flod-up' : 'flod-down'}
+              timeout={300}
+              unmountOnExit
+              nodeRef={nodeRef && null}
+            >
+              <div
+                className="transition duration-300 ease-in-out absolute h-full w-full top-0 left-0"
+                ref={nodeRef && null}
+              >
+                <ScrollbarBox>{currentOutlet}</ScrollbarBox>
+              </div>
+            </CSSTransition>
           </SwitchTransition>
         </AppMainContainer>
       </div>
