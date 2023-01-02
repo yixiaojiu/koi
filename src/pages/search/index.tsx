@@ -1,3 +1,3 @@
 export default function Search() {
-  return <div className="min-h-full">Search</div>
+  return <div className="h-full bg-blue">Search</div>
 }

@@ -2,7 +2,7 @@ import { Box } from '@mui/material'
 
 export default function Pixiv() {
   return (
-    <div>
+    <div className="h-full">
       <div className="flex m-4">
         <Box className="w-30 h-10" sx={{ backgroundColor: 'primary.main' }}>
           primary.main

@@ -1,7 +1,15 @@
 import type { LazyExoticComponent } from 'react'
-import { Suspense, lazy } from 'react'
-import { Navigate, RouterProvider, createHashRouter } from 'react-router-dom'
+import { Suspense, lazy, createRef, RefObject } from 'react'
+import { Navigate, RouterProvider, createHashRouter, IndexRouteObject, NonIndexRouteObject } from 'react-router-dom'
 import { RouterGuard } from '@/router/guard/routerGuard'
+import { Override } from '@/shared/types/utils'
+
+export type CustomNonIndexRouteObject = Override<
+  NonIndexRouteObject,
+  { children?: CustomRouteObject[]; nodeRef?: RefObject<Element> }
+>
+
+type CustomRouteObject = IndexRouteObject | CustomNonIndexRouteObject
 
 const Loadable = (Component: LazyExoticComponent<any>) => (props: Record<string, any>) => {
   return (
@@ -18,20 +26,22 @@ const Pixiv = Loadable(lazy(() => import('@/pages/pixiv/index')))
 const Setting = Loadable(lazy(() => import('@/pages/setting/index')))
 const NotFounded = Loadable(lazy(() => import('@/pages/404/index')))
 
-export const router = createHashRouter([
+export const routes: CustomRouteObject[] = [
   {
     path: '/',
     element: <RouterGuard />,
     children: [
       { element: <Navigate to={'home'} />, index: true },
-      { path: 'home', element: <Home /> },
-      { path: 'search', element: <Search /> },
-      { path: 'user', element: <User /> },
-      { path: 'pixiv', element: <Pixiv /> },
-      { path: 'setting', element: <Setting /> },
+      { path: 'home', element: <Home />, nodeRef: createRef() },
+      { path: 'search', element: <Search />, nodeRef: createRef() },
+      { path: 'user', element: <User />, nodeRef: createRef() },
+      { path: 'pixiv', element: <Pixiv />, nodeRef: createRef() },
+      { path: 'setting', element: <Setting />, nodeRef: createRef() },
       { path: '*', element: <NotFounded /> },
     ],
   },
-])
+]
+
+export const router = createHashRouter(routes)
 
 export const Router = () => <RouterProvider router={router} />
