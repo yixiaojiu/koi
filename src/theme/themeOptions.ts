@@ -24,6 +24,7 @@ export const THEME_DARK: PaletteOptions = {
   },
   secondary: {
     main: '#1e1d2b',
+    light: '#ffecee',
   },
 }
 
@@ -48,6 +49,7 @@ export const THEME_PINK: PaletteOptions = {
   },
   secondary: {
     main: '#efeff4',
+    light: '#ffc5cd',
   },
 }
 

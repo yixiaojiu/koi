@@ -1,14 +1,10 @@
-import { HomeData } from '@/service/types/getHome'
 import { Box, Typography } from '@mui/material'
-import { useQueryClient } from '@tanstack/react-query'
 import { Tabs } from '@/components/tabs/Tabs'
 import { tabs } from '@/pages/home/component/home-article/constant'
+import { TabInfo } from '@/pages/home/component/home-article/TabInfo'
 import { useState } from 'react'
 
 export const HomeArticle = () => {
-  const queryClient = useQueryClient()
-  const perweeks = queryClient.getQueryData<HomeData>(['home'])!.perweeks
-
   const [tabActiveIndex, setTabActiveIndex] = useState(() => new Date().getDay())
 
   return (
@@ -30,6 +26,7 @@ export const HomeArticle = () => {
           新番动态
         </Typography>
         <Tabs tabArr={tabs} activeIndex={tabActiveIndex} change={(activeIndex) => setTabActiveIndex(activeIndex)} />
+        <TabInfo activeIndex={tabActiveIndex} />
       </Box>
     </div>
   )
