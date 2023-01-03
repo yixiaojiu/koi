@@ -1,9 +1,10 @@
 import { useRef, useState } from 'react'
 import { LIVE2D_CDNS } from '@/components/live2d/static'
 import { delay } from '@/shared/utils'
-import { useMounted } from '@/shared/utils'
+import { useMounted } from '@/shared/hook/useMounted'
 import { observer } from 'mobx-react-lite'
 import { live2dStore } from '@/store/live2d.store'
+import { useMove } from '@/shared/hook/useMove'
 
 /** 初始化参数 */
 export interface InitOption {
@@ -27,6 +28,10 @@ interface Props {
 
 export const Live2d = observer((props: Props) => {
   const cvs = useRef<HTMLCanvasElement | null>(null)
+  const container = useRef<HTMLDivElement | null>(null)
+
+  useMove(container)
+
   const [live2d, setLive2d] = useState<{
     instance: any
     version: InitOption['version']
@@ -111,7 +116,10 @@ export const Live2d = observer((props: Props) => {
   return (
     <div
       onClick={onClick}
-      className={` fixed left-0 bottom-0 select-none ${live2dState.visible ? 'block' : 'hidden'} z-99`}
+      ref={container}
+      className={` fixed w-[210px] h-[260px] left-0 bottom-0 select-none ${
+        live2dState.visible ? 'block' : 'hidden'
+      } z-99`}
     >
       <canvas ref={cvs} />
     </div>

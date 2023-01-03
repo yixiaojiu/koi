@@ -8,7 +8,7 @@ interface Props {
 export const AppMainContainer = (props: Props) => {
   return (
     <Box
-      className="flex-1 relative rounded-tl-6"
+      className="flex-1 relative rounded-tl-6 overflow-hidden"
       sx={{
         height: 'calc(100vh - 3rem);',
       }}

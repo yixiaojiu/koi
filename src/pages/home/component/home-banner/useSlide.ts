@@ -1,6 +1,6 @@
 import type { RefObject } from 'react'
 import { useMemo, useState } from 'react'
-import { useMounted } from '@/shared/utils'
+import { useMounted } from '@/shared/hook/useMounted'
 
 const GAP_WIDTH = 16
 
