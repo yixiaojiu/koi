@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite'
-import { useLocation, useOutlet } from 'react-router-dom'
+import { useLocation, Outlet } from 'react-router-dom'
 import { AppHeader } from '@/layout/AppHeader'
 import { AppAsideBar } from '@/layout/AppAsideBar'
 import { AppMainContainer } from '@/layout/AppMainContainer'
@@ -13,7 +13,11 @@ import '@/router/guard/RouterTransition.less'
 
 export const RouterGuard = observer(() => {
   const location = useLocation()
-  const currentOutlet = useOutlet()
+
+  // 导致 bug
+  //  Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect,
+  //  but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.%s
+  // const currentOutlet = useOutlet()
   const { nodeRef } = (routes[0].children!.find((route) => route.path === location.pathname) ?? {
     nodeRef: null,
   }) as CustomNonIndexRouteObject
@@ -22,6 +26,7 @@ export const RouterGuard = observer(() => {
 
   useEffect(() => {
     asideBar.setPathname(location.pathname)
+    console.log(location.pathname)
     handleTitle(location.pathname)
   }, [location.pathname])
 
@@ -43,7 +48,9 @@ export const RouterGuard = observer(() => {
                 className="transition duration-300 ease-in-out absolute h-full w-full top-0 left-0"
                 ref={nodeRef && null}
               >
-                <ScrollbarBox>{currentOutlet}</ScrollbarBox>
+                <ScrollbarBox>
+                  <Outlet />
+                </ScrollbarBox>
               </div>
             </CSSTransition>
           </SwitchTransition>

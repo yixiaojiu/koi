@@ -1,11 +1,29 @@
 import { Box, Typography } from '@mui/material'
 import { asideBarItems } from '@/layout/constant'
 import { useNavigate } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import { observer } from 'mobx-react-lite'
 import { asideBarStore } from '@/store/asideBar.store'
 import { useEffect, useState } from 'react'
 import { WEB_NAME } from '@/shared/constant'
+
+const outer: Variants = {
+  open: {
+    width: 240,
+  },
+  close: {
+    width: 40,
+  },
+}
+
+const inner: Variants = {
+  open: {
+    x: 0,
+  },
+  close: {
+    x: -200,
+  },
+}
 
 export const AppAsideBar = observer(() => {
   const navigate = useNavigate()
@@ -15,6 +33,7 @@ export const AppAsideBar = observer(() => {
     x: asideBar.pointerIndex === -1 ? -58 : 0,
     y: asideBar.pointerIndex * 48,
   })
+
   useEffect(() => {
     setTranslate((translate) => {
       if (asideBar.pointerIndex === -1) {
@@ -64,8 +83,13 @@ export const AppAsideBar = observer(() => {
   })
 
   return (
-    <motion.div className="w-[240px] relative" animate={{ width: asideBar.open ? 240 : 40 }}>
-      <motion.div className="w-[240px] absolute top-0 left-0" animate={{ x: asideBar.open ? 0 : -200 }}>
+    <motion.div
+      className="w-[240px] relative"
+      initial="close"
+      animate={asideBar.open ? 'open' : 'close'}
+      variants={outer}
+    >
+      <motion.div className="w-[240px] absolute top-0 left-0" variants={inner}>
         <Box
           className="w-full rounded-r-6 relative min-h-[400px]"
           sx={{
