@@ -34,6 +34,8 @@ export default defineConfig({
       shortcuts: {
         center: 'flex items-center justify-center',
         'absolute-init': 'absolute w-full h-full top-0 left-0',
+        full: 'w-full h-full',
+        'absolute-0': 'absolute top-0 left-0',
       },
     }),
   ],

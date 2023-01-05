@@ -628,65 +628,6 @@
   ],
   "categoryAnimes": [
     {
-      "name": "国产动漫",
-      "list": [
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008vY4jCgy1h8woxya581j305i07nwep.jpg",
-          "id": "24242",
-          "title": "元龙 第三季",
-          "season": "第4集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008v6dp8gy1h6okpwckuvj305i07n0sw.jpg",
-          "id": "24178",
-          "title": "仙王的日常生活 第三季",
-          "season": "第11集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008kBpBlgy1gtzhrdz96lj605i07njrl02.jpg",
-          "id": "19787",
-          "title": "斗罗大陆",
-          "season": "第237集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008ufEQzgy1h75u8xo076j305i07nmxb.jpg",
-          "id": "24221",
-          "title": "虚境重构",
-          "season": "第9集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008ufEQzgy1h6wm5brpf9j305i07nglv.jpg",
-          "id": "24201",
-          "title": "百炼成神 动态漫",
-          "season": "第12集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008v6dp8gy1h6rve7k4zgj305i07nglv.jpg",
-          "id": "24183",
-          "title": "绝代双骄",
-          "season": "第12集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008kBpBlgy1h48nb65j0kj305i07ngly.jpg",
-          "id": "24106",
-          "title": "枪火天灵 动态漫 第二季",
-          "season": "第24集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008kBpBlgy1h3gtj7u9gyj305i07nglx.jpg",
-          "id": "24071",
-          "title": "最强神医混都市 动态漫",
-          "season": "第45集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008kBpBlgy1gzdzr7t7s7j305i07n3yw.jpg",
-          "id": "23929",
-          "title": "阴阳师·平安物语 第三季",
-          "season": "第12集"
-        }
-      ]
-    },
-    {
       "name": "动漫电影",
       "list": [
         {
@@ -718,89 +659,6 @@
           "id": "23835",
           "title": "BanG Dream! Poppin'Dream！",
           "season": "[全集]"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008ufEQzgy1h7sfswyh21j305i07nt8u.jpg",
-          "id": "24232",
-          "title": "摇曳露营△剧场版",
-          "season": "[全集]"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008kBpBlgy1gxx56c0smkj305i07nmx8.jpg",
-          "id": "23800",
-          "title": "五等分的新娘剧场版",
-          "season": "[全集]"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008ufEQzgy1h6t1nykgtqj305i07n74i.jpg",
-          "id": "23847",
-          "title": "DEEMO 樱花之音 -你弹奏的声音，至今仍在回响-",
-          "season": "[全集]"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008v6dp8gy1h6mmrt25ebj305i07ngm2.jpg",
-          "id": "23170",
-          "title": "超时空要塞Δ 绝对LIVE!!!!!!",
-          "season": "[全集]"
-        }
-      ]
-    },
-    {
-      "name": "后宫动漫",
-      "list": [
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008v6dp8gy1h61zp2x6x0j305i07n74n.jpg",
-          "id": "23947",
-          "title": "不道德公会",
-          "season": "00:00 第10集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008ufEQzgy1h6ytnwdf2kj305i07nglx.jpg",
-          "id": "23957",
-          "title": "恋爱FLOPS",
-          "season": "00:05 第9集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008v6dp8gy1h67m8jydh3j305i07nwep.jpg",
-          "id": "23801",
-          "title": "想要成为影之实力者",
-          "season": "22:30 第10集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008kBpBlgy1h53w9xzp2jj305i07n3yt.jpg",
-          "id": "23890",
-          "title": "在异世界迷宫开后宫",
-          "season": "第12集(完结)"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008kBpBlgy1h4bdt84qi9j305i07ndg6.jpg",
-          "id": "24110",
-          "title": "彼得·格里尔的贤者时间 第二季",
-          "season": "00:30 第9集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/9a6d8579gy1h5drbz365ej205i07naae.jpg",
-          "id": "23844",
-          "title": "后宫之乌",
-          "season": "00:00 第10集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008v6dp8gy1h6raro516aj305i07njrn.jpg",
-          "id": "24052",
-          "title": "被勇者队伍开除的驯兽师，邂逅最强种的猫耳少女",
-          "season": "22:00 第10集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008kBpBlgy1gxx56c0smkj305i07nmx8.jpg",
-          "id": "23800",
-          "title": "五等分的新娘剧场版",
-          "season": "[全集]"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008kBpBlgy1h2i4xph0b1j305i07njrq.jpg",
-          "id": "23726",
-          "title": "期待在地下城邂逅有错吗 第四季",
-          "season": "第11集"
         }
       ]
     },
@@ -836,30 +694,41 @@
           "id": "24173",
           "title": "剑风传奇 黄金时代篇 MEMORIAL EDITION",
           "season": "01:00 第10集"
+        }
+      ]
+    },
+    {
+      "name": "国产动漫",
+      "list": [
+        {
+          "cover": "https://tva4.sinaimg.cn/large/008vY4jCgy1h8woxya581j305i07nwep.jpg",
+          "id": "24242",
+          "title": "元龙 第三季",
+          "season": "第4集"
         },
         {
-          "cover": "https://tva4.sinaimg.cn/large/008kBpBlgy1gtzhf56yrtj605i07nt9202.jpg",
-          "id": "23742",
-          "title": "JOJO的奇妙冒险 第六部(石之海)",
-          "season": "第38集(完结)"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008kBpBlgy1gtzhsti7j1j605i07ndg702.jpg",
-          "id": "18897",
-          "title": "博人传 火影忍者新时代",
-          "season": "17:30 第278集"
-        },
-        {
-          "cover": "https://tva4.sinaimg.cn/large/008kBpBlgy1h028amozpij305i07n0t6.jpg",
-          "id": "23938",
-          "title": "超龙珠英雄UGM",
-          "season": "第5集"
+          "cover": "https://tva4.sinaimg.cn/large/008v6dp8gy1h6okpwckuvj305i07n0sw.jpg",
+          "id": "24178",
+          "title": "仙王的日常生活 第三季",
+          "season": "第11集"
         },
         {
           "cover": "https://tva4.sinaimg.cn/large/008kBpBlgy1gtzhrdz96lj605i07njrl02.jpg",
           "id": "19787",
           "title": "斗罗大陆",
           "season": "第237集"
+        },
+        {
+          "cover": "https://tva4.sinaimg.cn/large/008ufEQzgy1h75u8xo076j305i07nmxb.jpg",
+          "id": "24221",
+          "title": "虚境重构",
+          "season": "第9集"
+        },
+        {
+          "cover": "https://tva4.sinaimg.cn/large/008ufEQzgy1h6wm5brpf9j305i07nglv.jpg",
+          "id": "24201",
+          "title": "百炼成神 动态漫",
+          "season": "第12集"
         }
       ]
     }

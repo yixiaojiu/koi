@@ -11,6 +11,7 @@ export default function User() {
   }
   return (
     <div className="h-full text-amber center flex-col">
+      <div className="text-[var(--font-color)]">ooooooooo</div>
       <motion.div
         animate={{
           x: visible ? 200 : 0,
@@ -22,7 +23,11 @@ export default function User() {
         aaaaaaaaaaa
       </motion.div>
       <button onClick={() => setVisible((visible) => !visible)}>按钮</button>
-      <motion.ul initial="hidden" animate={visible ? 'visible' : 'hidden'} variants={item}>
+      <motion.ul
+        initial="hidden"
+        animate={visible ? 'visible' : 'hidden'}
+        variants={item}
+      >
         <motion.li>1</motion.li>
         <motion.li>2</motion.li>
         <motion.li>3</motion.li>

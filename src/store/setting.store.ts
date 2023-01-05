@@ -1,6 +1,7 @@
 import { makeAutoObservable } from 'mobx'
 import type { ThemeMode } from '@/shared/types/theme'
 import { makePersistable } from 'mobx-persist-store'
+import { createTheme, getThemeColorInstance } from '@/theme/color/color.class'
 
 const htmlDom = document.querySelector('html')!
 const initMode = (mode: ThemeMode) => {
@@ -23,6 +24,7 @@ class SettingsStore {
       storage: window.localStorage,
     }).then(() => {
       initMode(this.mode)
+      createTheme(this.mode)
     })
   }
 
@@ -33,6 +35,7 @@ class SettingsStore {
       this.mode = 'light'
     }
     initMode(this.mode)
+    getThemeColorInstance()!.changeMode(this.mode)
   }
 
   changeServeUrl(url: string) {

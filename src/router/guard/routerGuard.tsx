@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite'
-import { useLocation, Outlet } from 'react-router-dom'
+import { useLocation, useOutlet } from 'react-router-dom'
 import { AppHeader } from '@/layout/AppHeader'
 import { AppAsideBar } from '@/layout/AppAsideBar'
 import { AppMainContainer } from '@/layout/AppMainContainer'
@@ -14,11 +14,14 @@ import '@/router/guard/RouterTransition.less'
 export const RouterGuard = observer(() => {
   const location = useLocation()
 
-  // 导致 bug
+  // 导致 bug, 不使用useOutlet 导致路由过渡消失(自己简易封装Navigate组件解决)
   //  Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect,
   //  but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.%s
-  // const currentOutlet = useOutlet()
-  const { nodeRef } = (routes[0].children!.find((route) => route.path === location.pathname) ?? {
+  const currentOutlet = useOutlet()
+  debugger
+  const { nodeRef } = (routes[0].children!.find(
+    (route) => route.path === location.pathname
+  ) ?? {
     nodeRef: null,
   }) as CustomNonIndexRouteObject
 
@@ -26,7 +29,6 @@ export const RouterGuard = observer(() => {
 
   useEffect(() => {
     asideBar.setPathname(location.pathname)
-    console.log(location.pathname)
     handleTitle(location.pathname)
   }, [location.pathname])
 
@@ -39,7 +41,9 @@ export const RouterGuard = observer(() => {
           <SwitchTransition>
             <CSSTransition
               key={location.pathname}
-              classNames={asideBar.changeDirection === 'up' ? 'flod-up' : 'flod-down'}
+              classNames={
+                asideBar.changeDirection === 'up' ? 'flod-up' : 'flod-down'
+              }
               timeout={300}
               unmountOnExit
               nodeRef={nodeRef && null}
@@ -48,9 +52,7 @@ export const RouterGuard = observer(() => {
                 className="transition duration-300 ease-in-out absolute h-full w-full top-0 left-0"
                 ref={nodeRef && null}
               >
-                <ScrollbarBox>
-                  <Outlet />
-                </ScrollbarBox>
+                <ScrollbarBox>{currentOutlet}</ScrollbarBox>
               </div>
             </CSSTransition>
           </SwitchTransition>

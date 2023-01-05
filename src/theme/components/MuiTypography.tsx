@@ -5,5 +5,9 @@ export const MuiTypography: Components['MuiTypography'] = {
     root: {
       fontFamily: 'SmileySans',
     },
+    h2: {
+      fontSize: '1.5rem',
+      fontFamily: 'bold',
+    },
   },
 }

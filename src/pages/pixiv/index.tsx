@@ -18,7 +18,10 @@ export default function Pixiv() {
         <Box className="w-50 h-10" sx={{ backgroundColor: 'background.paper' }}>
           background.paper
         </Box>
-        <Box className="w-50 h-10" sx={{ backgroundColor: 'background.default' }}>
+        <Box
+          className="w-50 h-10"
+          sx={{ backgroundColor: 'background.default' }}
+        >
           background.default
         </Box>
       </div>
@@ -34,6 +37,25 @@ export default function Pixiv() {
         <Box className="w-30 h-10" sx={{ backgroundColor: 'secondary.main' }}>
           secondary.main
         </Box>
+      </div>
+      <div className="flex m-4 gap-3">
+        <div className="text-blue p-3 bg-[var(--bg-color)]">--bg-color</div>
+        <div className="text-blue p-3 bg-[var(--aside-bg-color)]">
+          --aside-bg-color
+        </div>
+        <div className="text-blue p-3 bg-[var(--box-bg-color)]">
+          --box-bg-color
+        </div>
+        <div className="text-blue p-3 bg-[var(--font-color)]">--font-color</div>
+        <div className="text-blue p-3 bg-[var(--font-unactive-color)]">
+          --font-unactive-color
+        </div>
+        <div className="text-blue p-3 bg-[var(--primary-color)]">
+          --primary-color
+        </div>
+        <div className="text-blue p-3 bg-[var(--warning-color)]">
+          --warning-color
+        </div>
       </div>
       <div className="flex m-4">
         <Box className="w-30 h-10 bg-[#003892]" />

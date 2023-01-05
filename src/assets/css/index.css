@@ -24,3 +24,8 @@ button {
   outline: none;
   font-family: SmileySans, 'Roboto', 'Helvetica', 'Arial', sans-serif;
 }
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
