@@ -19,9 +19,7 @@ export const RouterGuard = observer(() => {
   //  but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.%s
   const currentOutlet = useOutlet()
   debugger
-  const { nodeRef } = (routes[0].children!.find(
-    (route) => route.path === location.pathname
-  ) ?? {
+  const { nodeRef } = (routes[0].children!.find((route) => route.path === location.pathname) ?? {
     nodeRef: null,
   }) as CustomNonIndexRouteObject
 
@@ -41,9 +39,7 @@ export const RouterGuard = observer(() => {
           <SwitchTransition>
             <CSSTransition
               key={location.pathname}
-              classNames={
-                asideBar.changeDirection === 'up' ? 'flod-up' : 'flod-down'
-              }
+              classNames={asideBar.changeDirection === 'up' ? 'flod-up' : 'flod-down'}
               timeout={300}
               unmountOnExit
               nodeRef={nodeRef && null}

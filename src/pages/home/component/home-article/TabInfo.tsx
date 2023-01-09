@@ -8,9 +8,7 @@ interface Props {
 
 export const TabInfo = (props: Props) => {
   const queryClient = useQueryClient()
-  const tabInfo = queryClient.getQueryData<HomeData>(['home'])!.perweeks[
-    props.activeIndex
-  ]
+  const tabInfo = queryClient.getQueryData<HomeData>(['home'])!.perweeks[props.activeIndex]
   return (
     <div className="w-full py-3">
       <ul className="flex gap-3 flex-wrap ">
@@ -24,18 +22,10 @@ export const TabInfo = (props: Props) => {
                 backgroundColor: 'background.default',
               }}
             >
-              <Box
-                component="p"
-                className="text-sm"
-                sx={{ color: 'secondary.light' }}
-              >
+              <Box component="p" className="text-sm" sx={{ color: 'secondary.light' }}>
                 {item.title}
               </Box>
-              <Box
-                component="span"
-                className="text-xs"
-                sx={{ color: 'text.secondary' }}
-              >
+              <Box component="span" className="text-xs" sx={{ color: 'text.secondary' }}>
                 {item.season}
               </Box>
             </Box>

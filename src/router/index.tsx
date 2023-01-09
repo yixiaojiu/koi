@@ -1,11 +1,6 @@
 import type { LazyExoticComponent, RefObject } from 'react'
 import { Suspense, lazy, createRef, memo } from 'react'
-import {
-  RouterProvider,
-  createHashRouter,
-  IndexRouteObject,
-  NonIndexRouteObject,
-} from 'react-router-dom'
+import { RouterProvider, createHashRouter, IndexRouteObject, NonIndexRouteObject } from 'react-router-dom'
 import { RouterGuard } from '@/router/guard/routerGuard'
 import { Override } from '@/shared/types/utils'
 import { Navigate } from '@/components/navigate/Navigate'
@@ -17,14 +12,13 @@ export type CustomNonIndexRouteObject = Override<
 
 type CustomRouteObject = IndexRouteObject | CustomNonIndexRouteObject
 
-const Loadable =
-  (Component: LazyExoticComponent<any>) => (props: Record<string, any>) => {
-    return (
-      <Suspense fallback={<div />}>
-        <Component {...props} />
-      </Suspense>
-    )
-  }
+const Loadable = (Component: LazyExoticComponent<any>) => (props: Record<string, any>) => {
+  return (
+    <Suspense fallback={<div />}>
+      <Component {...props} />
+    </Suspense>
+  )
+}
 
 const Home = memo(Loadable(lazy(() => import('@/pages/home/index'))))
 const Search = memo(Loadable(lazy(() => import('@/pages/search/index'))))

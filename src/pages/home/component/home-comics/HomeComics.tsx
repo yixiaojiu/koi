@@ -4,9 +4,7 @@ import { CategoryBlockAnime } from '@/pages/home/component/home-comics/CategoryB
 
 export const HomeComics = () => {
   const queryClient = useQueryClient()
-  const categoryAnimes = queryClient.getQueryData<HomeData>([
-    'home',
-  ])!.categoryAnimes
+  const categoryAnimes = queryClient.getQueryData<HomeData>(['home'])!.categoryAnimes
   return (
     <div className="px-8 py-5">
       {categoryAnimes.map((category) => (

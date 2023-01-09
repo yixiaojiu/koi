@@ -17,10 +17,7 @@ class ThemeColor {
   colorVarChange() {
     const colorCollection = this._mode === 'light' ? THEME_PINK : THEME_DARK
     SYSTEM_COLOR.forEach((item, index) => {
-      document.documentElement.style.setProperty(
-        item.var,
-        colorCollection[index]
-      )
+      document.documentElement.style.setProperty(item.var, colorCollection[index])
     })
   }
 }

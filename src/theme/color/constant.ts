@@ -1,13 +1,5 @@
 // 黑色主题
-export const THEME_DARK = [
-  '#1e1d2b',
-  '#2f3042',
-  '#222433',
-  '#fff',
-  '#ffffffa3',
-  'rgba(104, 198, 189, 1)',
-  '#f5073e',
-]
+export const THEME_DARK = ['#1e1d2b', '#2f3042', '#222433', '#fff', '#ffffffa3', 'rgba(104, 198, 189, 1)', '#f5073e']
 
 // 粉色主题
 export const THEME_PINK = [

@@ -13,8 +13,7 @@ export const CategoryBlockAnime = (props: Props) => {
         <p
           className="absolute opacity-20 left-0 bottom-0 font-extrabold text-[38px] tracking-widest"
           style={{
-            background:
-              '-webkit-linear-gradient(90deg,transparent,var(--primary-color))',
+            background: '-webkit-linear-gradient(90deg,transparent,var(--primary-color))',
             WebkitTextFillColor: 'transparent',
             WebkitBackgroundClip: 'text',
           }}
@@ -47,18 +46,12 @@ export const CategoryBlockAnime = (props: Props) => {
               <div className="absolute-0 full z-3 center flex-col bg-black/[0.6] opacity-0 hover:opacity-100 transition duration-300">
                 <div className="center relative w-10 h-10 rounded-full bg-white cursor-pointer group">
                   <div className="full absolute-0 bg-white/[0.3] transition rounded-full group-hover:scale-140"></div>
-                  <Icon
-                    iconName="i-ic-round-play-arrow"
-                    size="large"
-                    className="text-[#333]"
-                  />
+                  <Icon iconName="i-ic-round-play-arrow" size="large" className="text-[#333]" />
                 </div>
                 <p className="mt-6 text-white/[0.95] max-w-4/5 text-center font-semibold text-sm text-center">
                   {anime.title}
                 </p>
-                <span className="text-xs text-white/[0.6] mt-2">
-                  {anime.season}
-                </span>
+                <span className="text-xs text-white/[0.6] mt-2">{anime.season}</span>
               </div>
             </motion.div>
           </div>

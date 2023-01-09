@@ -23,11 +23,7 @@ export default function User() {
         aaaaaaaaaaa
       </motion.div>
       <button onClick={() => setVisible((visible) => !visible)}>按钮</button>
-      <motion.ul
-        initial="hidden"
-        animate={visible ? 'visible' : 'hidden'}
-        variants={item}
-      >
+      <motion.ul initial="hidden" animate={visible ? 'visible' : 'hidden'} variants={item}>
         <motion.li>1</motion.li>
         <motion.li>2</motion.li>
         <motion.li>3</motion.li>
