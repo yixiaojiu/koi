@@ -1,7 +1,7 @@
-import type { childrenProps } from '@/shared/types/utils'
+import type { ChildrenProps } from '@/shared/types/utils'
 import { Box } from '@mui/material'
 
-export const OutLinedRoundButton = (props: childrenProps) => (
+export const OutLinedRoundButton = (props: ChildrenProps) => (
   <Box
     component="button"
     className="center text-slate-100 text-sm rounded-full border border-slate-100 hover:border-cyan-500"

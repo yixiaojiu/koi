@@ -1,140 +1,138 @@
 {
-  "data": {
-    "cover": "https://tva4.sinaimg.cn/large/008kBpBlgy1h37059hwxmj305i07ngly.jpg",
-    "title": "Lycoris Recoil",
-    "rank": "5.0分",
-    "alias": "莉可丽丝 / リコリス リコイル",
-    "season": "更新至第13集(完结)",
-    "releaseTime": "2022-07-02",
-    "categories": ["百合", "战斗", "犯罪"],
-    "introduction": "位于东京下町的日式咖啡馆“LYCORECO”。咖啡店所收到的订单是美味的咖啡和甜点……不仅仅如此！？从递送货物到接送走过令人不安的夜路，从消灭僵尸到巨大怪兽…！？有什么困难的话，请随时和我们联系！我们会解决顾客的任何“困扰”！等待着各位的是总是面带微笑的看板娘以及冷酷而认真的新人。不想工作的小孩，焦急结婚的30岁女子？而且店长痴迷于日本文化！不管点些什么，都请交给我吧♪",
-    "playLists": [
-      [
-        {
-          "title": "制作决定PV",
-          "path": "/vp/23867-0-0.html"
-        },
-        {
-          "title": "先导PV",
-          "path": "/vp/23867-0-1.html"
-        },
-        {
-          "title": "EDPV",
-          "path": "/vp/23867-0-2.html"
-        },
-        {
-          "title": "PV2",
-          "path": "/vp/23867-0-3.html"
-        }
-      ],
-      [
-        {
-          "title": "第1集",
-          "path": "/vp/23867-1-0.html"
-        },
-        {
-          "title": "第2集",
-          "path": "/vp/23867-1-1.html"
-        },
-        {
-          "title": "第3集",
-          "path": "/vp/23867-1-2.html"
-        },
-        {
-          "title": "第4集",
-          "path": "/vp/23867-1-3.html"
-        },
-        {
-          "title": "第5集",
-          "path": "/vp/23867-1-4.html"
-        },
-        {
-          "title": "第6集",
-          "path": "/vp/23867-1-5.html"
-        },
-        {
-          "title": "第7集",
-          "path": "/vp/23867-1-6.html"
-        },
-        {
-          "title": "第8集",
-          "path": "/vp/23867-1-7.html"
-        },
-        {
-          "title": "第9集",
-          "path": "/vp/23867-1-8.html"
-        },
-        {
-          "title": "第10集",
-          "path": "/vp/23867-1-9.html"
-        },
-        {
-          "title": "第11集",
-          "path": "/vp/23867-1-10.html"
-        },
-        {
-          "title": "第12集",
-          "path": "/vp/23867-1-11.html"
-        },
-        {
-          "title": "第13集",
-          "path": "/vp/23867-1-12.html"
-        }
-      ],
-      [
-        {
-          "title": "第1集",
-          "path": "/vp/23867-2-0.html"
-        },
-        {
-          "title": "第2集",
-          "path": "/vp/23867-2-1.html"
-        },
-        {
-          "title": "第3集",
-          "path": "/vp/23867-2-2.html"
-        },
-        {
-          "title": "第4集",
-          "path": "/vp/23867-2-3.html"
-        },
-        {
-          "title": "第5集",
-          "path": "/vp/23867-2-4.html"
-        },
-        {
-          "title": "第6集",
-          "path": "/vp/23867-2-5.html"
-        },
-        {
-          "title": "第7集",
-          "path": "/vp/23867-2-6.html"
-        },
-        {
-          "title": "第8集",
-          "path": "/vp/23867-2-7.html"
-        },
-        {
-          "title": "第9集",
-          "path": "/vp/23867-2-8.html"
-        },
-        {
-          "title": "第10集",
-          "path": "/vp/23867-2-9.html"
-        },
-        {
-          "title": "第11集",
-          "path": "/vp/23867-2-10.html"
-        },
-        {
-          "title": "第12集",
-          "path": "/vp/23867-2-11.html"
-        },
-        {
-          "title": "第13集",
-          "path": "/vp/23867-2-12.html"
-        }
-      ]
+  "cover": "https://tva4.sinaimg.cn/large/008kBpBlgy1h37059hwxmj305i07ngly.jpg",
+  "title": "Lycoris Recoil",
+  "rank": "5.0分",
+  "alias": "莉可丽丝 / リコリス リコイル",
+  "season": "更新至第13集(完结)",
+  "releaseTime": "2022-07-02",
+  "categories": ["百合", "战斗", "犯罪"],
+  "introduction": "位于东京下町的日式咖啡馆“LYCORECO”。咖啡店所收到的订单是美味的咖啡和甜点……不仅仅如此！？从递送货物到接送走过令人不安的夜路，从消灭僵尸到巨大怪兽…！？有什么困难的话，请随时和我们联系！我们会解决顾客的任何“困扰”！等待着各位的是总是面带微笑的看板娘以及冷酷而认真的新人。不想工作的小孩，焦急结婚的30岁女子？而且店长痴迷于日本文化！不管点些什么，都请交给我吧♪",
+  "playLists": [
+    [
+      {
+        "title": "制作决定PV",
+        "path": "/vp/23867-0-0.html"
+      },
+      {
+        "title": "先导PV",
+        "path": "/vp/23867-0-1.html"
+      },
+      {
+        "title": "EDPV",
+        "path": "/vp/23867-0-2.html"
+      },
+      {
+        "title": "PV2",
+        "path": "/vp/23867-0-3.html"
+      }
+    ],
+    [
+      {
+        "title": "第1集",
+        "path": "/vp/23867-1-0.html"
+      },
+      {
+        "title": "第2集",
+        "path": "/vp/23867-1-1.html"
+      },
+      {
+        "title": "第3集",
+        "path": "/vp/23867-1-2.html"
+      },
+      {
+        "title": "第4集",
+        "path": "/vp/23867-1-3.html"
+      },
+      {
+        "title": "第5集",
+        "path": "/vp/23867-1-4.html"
+      },
+      {
+        "title": "第6集",
+        "path": "/vp/23867-1-5.html"
+      },
+      {
+        "title": "第7集",
+        "path": "/vp/23867-1-6.html"
+      },
+      {
+        "title": "第8集",
+        "path": "/vp/23867-1-7.html"
+      },
+      {
+        "title": "第9集",
+        "path": "/vp/23867-1-8.html"
+      },
+      {
+        "title": "第10集",
+        "path": "/vp/23867-1-9.html"
+      },
+      {
+        "title": "第11集",
+        "path": "/vp/23867-1-10.html"
+      },
+      {
+        "title": "第12集",
+        "path": "/vp/23867-1-11.html"
+      },
+      {
+        "title": "第13集",
+        "path": "/vp/23867-1-12.html"
+      }
+    ],
+    [
+      {
+        "title": "第1集",
+        "path": "/vp/23867-2-0.html"
+      },
+      {
+        "title": "第2集",
+        "path": "/vp/23867-2-1.html"
+      },
+      {
+        "title": "第3集",
+        "path": "/vp/23867-2-2.html"
+      },
+      {
+        "title": "第4集",
+        "path": "/vp/23867-2-3.html"
+      },
+      {
+        "title": "第5集",
+        "path": "/vp/23867-2-4.html"
+      },
+      {
+        "title": "第6集",
+        "path": "/vp/23867-2-5.html"
+      },
+      {
+        "title": "第7集",
+        "path": "/vp/23867-2-6.html"
+      },
+      {
+        "title": "第8集",
+        "path": "/vp/23867-2-7.html"
+      },
+      {
+        "title": "第9集",
+        "path": "/vp/23867-2-8.html"
+      },
+      {
+        "title": "第10集",
+        "path": "/vp/23867-2-9.html"
+      },
+      {
+        "title": "第11集",
+        "path": "/vp/23867-2-10.html"
+      },
+      {
+        "title": "第12集",
+        "path": "/vp/23867-2-11.html"
+      },
+      {
+        "title": "第13集",
+        "path": "/vp/23867-2-12.html"
+      }
     ]
-  }
+  ]
 }

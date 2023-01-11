@@ -1,12 +1,14 @@
 import { useQueryClient } from '@tanstack/react-query'
 import { HomeData } from '@/service/types/getHome'
 import { Box } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 
 interface Props {
   activeIndex: number
 }
 
 export const TabInfo = (props: Props) => {
+  const navigate = useNavigate()
   const queryClient = useQueryClient()
   const tabInfo = queryClient.getQueryData<HomeData>(['home'])!.perweeks[props.activeIndex]
   return (
@@ -18,6 +20,7 @@ export const TabInfo = (props: Props) => {
               key={item.id}
               component="li"
               className="cursor-pointer rounded-md px-2 py-1 transition hover:brightness-95"
+              onClick={() => navigate(`/anime/${item.id}`)}
               sx={{
                 backgroundColor: 'background.default',
               }}

@@ -1,10 +1,10 @@
 export interface GetAnimeResponse {
   code: number
   msg: string
-  data: Data
+  data: AnimeInfo
 }
 
-export interface Data {
+export interface AnimeInfo {
   cover: string
   title: string
   rank: string
@@ -13,10 +13,10 @@ export interface Data {
   releaseTime: string
   categories: string[]
   introduction: string
-  playLists: PlayList[][]
+  playLists: AnimeVideoItem[][]
 }
 
-export interface PlayList {
-  title?: string
+export interface AnimeVideoItem {
+  title: string
   path: string
 }

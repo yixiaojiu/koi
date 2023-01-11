@@ -4,6 +4,7 @@
     url('@/assets/font/SmileySans-Oblique.ttf.woff2') format('woff2');
 }
 
+/* 亮暗色背景，控制html */
 .light {
   background-color: #efeff4;
 }
@@ -28,4 +29,23 @@ button {
 h2 {
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--font-unactive-color);
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--font-color);
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
 }

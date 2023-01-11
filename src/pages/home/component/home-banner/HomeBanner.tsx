@@ -7,11 +7,13 @@ import { OutLinedRoundButton } from '@/components/button/OutLinedRoundButton'
 import { TabLi } from '@/pages/home/component/home-banner/TabLi'
 import { Slide } from '@/pages/home/component/home-banner/Slide'
 import { useQueryClient } from '@tanstack/react-query'
+import { useNavigate } from 'react-router-dom'
 import type { HomeData } from '@/service/types/getHome'
 
 type Tab = 'hot' | 'recent'
 
 export const HomeBanner = () => {
+  const navigate = useNavigate()
   const queryClient = useQueryClient()
   const HomeData = queryClient.getQueryData<HomeData>(['home'])!
   const banners = HomeData.banners
@@ -36,7 +38,7 @@ export const HomeBanner = () => {
               在那笑容的前方可以看见未来。是光明地闪耀着的未来。尽管处于这种情况之下。那已经可以称之为奇迹了。
             </p>
             <div className="mt-8 flex gap-4">
-              <ContainedRoundButton>
+              <ContainedRoundButton onClick={() => navigate(`/anime/${currentBanner.id}`)}>
                 <span>前往播放</span>
                 <div className="i-ic-round-play-arrow w-6 h-6"></div>
               </ContainedRoundButton>

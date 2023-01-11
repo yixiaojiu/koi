@@ -1,7 +1,7 @@
 import { Box } from '@mui/material'
 import type { SxProps, Theme } from '@mui/material'
 
-interface Props {
+interface IconButtonProps {
   onClick: () => void
   icon: string
   sx?: SxProps<Theme>
@@ -9,7 +9,7 @@ interface Props {
   iconSize?: 'large' | 'normal'
 }
 
-export const IconButton = (props: Props) => {
+export const IconButton = (props: IconButtonProps) => {
   return (
     <Box
       onClick={props.onClick}

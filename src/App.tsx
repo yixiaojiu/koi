@@ -18,7 +18,7 @@ function App() {
   return (
     <ThemeConfig>
       <QueryClientProvider client={queryClient}>
-        <Box className="h-screen flex flex-col overflow-hidden bg-[var(--bg-color)] text-[var(--font-color)]">
+        <Box className="h-screen flex flex-col overflow-hidden bg-[var(--bg-color)] text-[var(--font-color)] min-w-[1100px]">
           <Live2d initOption={initOption} motionName="else" />
           <Router />
         </Box>
