@@ -1,9 +1,17 @@
-import { PageLoading } from '@/components/loading/PageLoading'
+import { useRef } from 'react'
+import { useVideo } from '@/pages/anime/component/player/useVideo'
 
 interface Props {
-  loading: boolean
+  src: string | undefined
+  className?: string
 }
 
 export const Player = (props: Props) => {
-  return <div className="aspect-video relative">{props.loading ? <PageLoading /> : <div>1</div>}</div>
+  const videoRef = useRef<HTMLVideoElement | null>(null)
+  useVideo(videoRef, props.src)
+  return (
+    <div className={` aspect-video relative ${props.className ? props.className : ''}`}>
+      <video className="absolute-init" ref={videoRef} controls />
+    </div>
+  )
 }

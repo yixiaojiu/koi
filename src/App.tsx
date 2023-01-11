@@ -3,6 +3,8 @@ import ThemeConfig from './theme'
 import { Router } from '@/router'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Live2d, InitOption } from '@/components/live2d/Live2d'
+import { observer } from 'mobx-react-lite'
+import { settingsStore } from '@/store/setting.store'
 
 const initOption: InitOption = {
   model: '/live2dModels/koharu/koharu.model.json',
@@ -13,13 +15,21 @@ const initOption: InitOption = {
   },
 }
 
+const Live2dControler = observer(() => {
+  if (settingsStore.live2dShow) {
+    return <Live2d initOption={initOption} motionName="else" />
+  } else {
+    return null
+  }
+})
+
 function App() {
   const queryClient = new QueryClient()
   return (
     <ThemeConfig>
       <QueryClientProvider client={queryClient}>
         <Box className="h-screen flex flex-col overflow-hidden bg-[var(--bg-color)] text-[var(--font-color)] min-w-[1100px]">
-          <Live2d initOption={initOption} motionName="else" />
+          <Live2dControler />
           <Router />
         </Box>
       </QueryClientProvider>

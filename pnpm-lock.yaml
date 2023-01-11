@@ -21,6 +21,7 @@ specifiers:
   eslint-plugin-react: ^7.31.11
   eslint-plugin-react-hooks: ^4.6.0
   framer-motion: ^7.6.7
+  hls.js: ^1.2.9
   husky: ^8.0.0
   less: ^4.1.3
   lint-staged: ^13.1.0
@@ -44,6 +45,7 @@ dependencies:
   '@unocss/reset': 0.45.29
   axios: 0.27.2
   framer-motion: 7.6.7_biqbaboplfbrettd7655fr4n2y
+  hls.js: 1.2.9
   mobx: 6.6.2
   mobx-persist-store: 1.1.2_mobx@6.6.2
   mobx-react-lite: 3.4.0_qrr2ojv4n7h7ey2xj7njerqqr4
@@ -2464,6 +2466,10 @@ packages:
 
   /hey-listen/1.0.8:
     resolution: {integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==}
+    dev: false
+
+  /hls.js/1.2.9:
+    resolution: {integrity: sha512-SPjm8ix0xe6cYzwDvdVGh2QvQPDkCYrGWpZu6bRaKNNVyEGWM9uF0pooh/Lqj/g8QBQgPFEx1vHzW8SyMY9rqg==}
     dev: false
 
   /hoist-non-react-statics/3.3.2:

@@ -2,8 +2,6 @@ import { useRef, useState } from 'react'
 import { LIVE2D_CDNS } from '@/components/live2d/static'
 import { delay } from '@/shared/utils'
 import { useMounted } from '@/shared/hook/useMounted'
-import { observer } from 'mobx-react-lite'
-import { live2dStore } from '@/store/live2d.store'
 import { useMove } from '@/shared/hook/useMove'
 
 /** 初始化参数 */
@@ -26,7 +24,7 @@ interface Props {
   motionName?: string
 }
 
-export const Live2d = observer((props: Props) => {
+export const Live2d = (props: Props) => {
   const cvs = useRef<HTMLCanvasElement | null>(null)
   const container = useRef<HTMLDivElement | null>(null)
 
@@ -39,7 +37,6 @@ export const Live2d = observer((props: Props) => {
     instance: null,
     version: 2,
   })
-  const [live2dState] = useState(() => live2dStore)
 
   /** 依赖加载 */
   const loadCDN = async () => {
@@ -114,14 +111,8 @@ export const Live2d = observer((props: Props) => {
     initLive2d(props.initOption)
   })
   return (
-    <div
-      onClick={onClick}
-      ref={container}
-      className={` fixed w-[210px] h-[260px] left-0 bottom-0 select-none ${
-        live2dState.visible ? 'block' : 'hidden'
-      } z-99`}
-    >
+    <div onClick={onClick} ref={container} className="fixed w-[210px] h-[260px] left-0 bottom-0 select-none z-99">
       <canvas ref={cvs} />
     </div>
   )
-})
+}

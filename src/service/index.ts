@@ -28,7 +28,7 @@ autorun(() => {
     async (res) => {
       if (settingsStore.isMock) {
         // 模拟请求的响应时间
-        await delay(42)
+        await delay(500)
         res.data = await handleMockData(res.request.responseURL)
       }
       return res

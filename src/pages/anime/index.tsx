@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom'
 import { useVideoItem } from '@/pages/anime/component/player/useVideoItem'
 import { useUpdate } from '@/shared/hook/useUpdate'
 import type { AnimeVideoItem } from '@/service/types/getAnime'
+import { PageLoading } from '@/components/loading/PageLoading'
 
 export default () => {
   const navigate = useNavigate()
@@ -41,8 +42,8 @@ export default () => {
           navigate(-1)
         }}
       />
-      <div className="mt-6 rounded-3xl bg-black">
-        <Player loading={AnimeIsLoading || videoIsLoading} />
+      <div className="mt-6 relative rounded-3xl overflow-hidden aspect-video bg-black">
+        {AnimeIsLoading || videoIsLoading ? <PageLoading /> : <Player src={videoInfo?.videoUrl} />}
       </div>
       <div className="mt-10 rounded-3xl bg-[var(--bg-color)]">
         <ComicTab />

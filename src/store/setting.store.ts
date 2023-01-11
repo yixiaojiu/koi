@@ -14,13 +14,15 @@ class SettingsStore {
   serveUrl = ''
   // 是否使用mock 数据
   isMock = true
+  // 是否展示live2d
+  live2dShow = false
 
   constructor() {
     makeAutoObservable(this)
 
     makePersistable(this, {
       name: '__SETTINGS__',
-      properties: ['mode', 'serveUrl', 'isMock'],
+      properties: ['mode', 'serveUrl', 'isMock', 'live2dShow'],
       storage: window.localStorage,
     }).then(() => {
       initMode(this.mode)
@@ -40,6 +42,10 @@ class SettingsStore {
 
   changeServeUrl(url: string) {
     this.serveUrl = url
+  }
+
+  toggleLive2dShow() {
+    this.live2dShow = !this.live2dShow
   }
 
   get isDark() {
