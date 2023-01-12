@@ -5,7 +5,7 @@ import { AppAsideBar } from '@/layout/AppAsideBar'
 import { AppMainContainer } from '@/layout/AppMainContainer'
 import { asideBarStore } from '@/store/asideBar.store'
 import { useEffect, useState } from 'react'
-import { handleTitle } from '@/shared/title'
+import { setTitle } from '@/shared/utils/title'
 import { SwitchTransition, CSSTransition } from 'react-transition-group'
 import { routes, CustomNonIndexRouteObject } from '@/router/index'
 import { ScrollbarBox } from '@/components/box/ScrollbarBox'
@@ -27,7 +27,9 @@ export const RouterGuard = observer(() => {
 
   useEffect(() => {
     asideBar.setPathname(location.pathname)
-    handleTitle(location.pathname)
+    setTitle({
+      pathname: location.pathname,
+    })
   }, [location.pathname])
 
   return (

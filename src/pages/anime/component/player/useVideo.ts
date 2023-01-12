@@ -15,9 +15,13 @@ export const useVideo = (videoRef: MutableRefObject<HTMLVideoElement | null>, sr
       hls.loadSource(src)
       hls.attachMedia(videoRef.current!)
     }
+    return () => {
+      hls.destroy()
+    }
   }, [src])
 }
-// "videoUrl": "https://wolongzywcdn3.com:65/dMYz2m3V/index.m3u8"
+
+// parsed
 
 function judgeSourceType(src: string): SourceType {
   return src.endsWith('.mp4') ? 'mp4' : 'hls'

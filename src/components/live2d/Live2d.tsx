@@ -65,7 +65,8 @@ export const Live2d = (props: Props) => {
   }: InitOption) => {
     try {
       await loadCDN()
-      await delay(1000)
+      // 等待js解析
+      await delay(2000)
       const PIXI = (window as any).PIXI
       if (!model || !PIXI) return console.log('依赖错误')
 

@@ -2,37 +2,15 @@ import { IconButton } from '@/components/button/IconButton'
 import { useNavigate } from 'react-router-dom'
 import { Player } from '@/pages/anime/component/player/Player'
 import { ComicTab } from '@/pages/anime/component/comic-tab/ComicTab'
-import { getVideo, getAnime } from '@/service/api/anime'
-import { useQuery } from '@tanstack/react-query'
 import { useParams } from 'react-router-dom'
-import { useVideoItem } from '@/pages/anime/component/player/useVideoItem'
-import { useUpdate } from '@/shared/hook/useUpdate'
-import type { AnimeVideoItem } from '@/service/types/getAnime'
 import { PageLoading } from '@/components/loading/PageLoading'
+import { useRequest } from '@/pages/anime/hooks'
 
 export default () => {
   const navigate = useNavigate()
   const params = useParams<{ id: string }>()
-  const update = useUpdate()
-  const { data: animeInfo, isLoading: AnimeIsLoading } = useQuery(['anime', params.id], async ({ queryKey }) => {
-    const { data: res } = await getAnime(queryKey[1]!)
-    return res.data
-  })
-  const animeVideoItem = useVideoItem(animeInfo?.playLists)
+  const { AnimeIsLoading, animeInfo, videoInfo, videoIsLoading } = useRequest(params.id!)
 
-  const { data: videoInfo, isLoading: videoIsLoading } = useQuery(
-    ['video', animeVideoItem],
-    async ({ queryKey }) => {
-      const { data: res } = await getVideo((queryKey[1] as AnimeVideoItem).path)
-      // 解决请求完成，不更新问题
-      update()
-      return res.data
-    },
-    {
-      enabled: !!animeVideoItem,
-      staleTime: Infinity,
-    }
-  )
   return (
     <div className="min-h-full bg-[var(--box-bg-color)] relative px-8 py-4">
       <IconButton
