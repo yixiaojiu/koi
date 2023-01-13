@@ -8,4 +8,8 @@
 
 ---
 
-[小记](/docs/note.md),记录项目开发过程中的问题与难点
+[小记](/docs/note.md)(记录项目开发过程中的问题与难点)
+
+## TODO
+
+- [ ] 尝试 async script 解决 live2d 依赖问题

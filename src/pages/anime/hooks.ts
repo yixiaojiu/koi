@@ -22,7 +22,6 @@ export const useDocumentTitle = (title: string | undefined) => {
 }
 
 export const useRequest = (id: string) => {
-  const update = useUpdate()
   const { data: animeInfo, isLoading: AnimeIsLoading } = useQuery(['anime', id], async ({ queryKey }) => {
     const { data: res } = await getAnime(queryKey[1]!)
     return res.data
@@ -34,8 +33,6 @@ export const useRequest = (id: string) => {
     ['video', animeVideoItem],
     async ({ queryKey }) => {
       const { data: res } = await getVideo((queryKey[1] as AnimeVideoItem).path)
-      // 解决请求完成，不更新问题
-      update()
       return res.data
     },
     {

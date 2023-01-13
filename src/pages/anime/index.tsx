@@ -21,7 +21,8 @@ export default () => {
         }}
       />
       <div className="mt-6 relative rounded-3xl overflow-hidden aspect-video bg-black">
-        {AnimeIsLoading || videoIsLoading ? <PageLoading /> : <Player src={videoInfo?.videoUrl} />}
+        {AnimeIsLoading || videoIsLoading ? <PageLoading /> : null}
+        <Player src={videoInfo?.videoUrl} />
       </div>
       <div className="mt-10 rounded-3xl bg-[var(--bg-color)]">
         <ComicTab />

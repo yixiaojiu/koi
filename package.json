@@ -10,7 +10,8 @@
     "prepare": "husky install",
     "lint": "eslint . --ext .ts,.tsx, --fix",
     "lint-staged": "lint-staged --allow-empty",
-    "format": "prettier --write --cache ."
+    "format": "prettier --write --cache .",
+    "video": "cd E:/Project/node.js/test/test && node app.js"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": "eslint --fix",

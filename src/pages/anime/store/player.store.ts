@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx'
 
-class PlayerStore {
+export class PlayerStore {
   paused = true
   constructor() {
     makeAutoObservable(this)

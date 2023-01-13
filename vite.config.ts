@@ -37,6 +37,14 @@ export default defineConfig({
         full: 'w-full h-full',
         'absolute-0': 'absolute top-0 left-0',
       },
+      rules: [
+        [
+          'black-gradient',
+          {
+            'background-image': 'linear-gradient(to top, rgba(67,73,78,0.5) 0%, rgba(162,177,189,0.1) 100%)',
+          },
+        ],
+      ],
     }),
   ],
 })

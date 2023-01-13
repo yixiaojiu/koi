@@ -1,12 +1,17 @@
 import { Box } from '@mui/material'
 import type { SxProps, Theme } from '@mui/material'
 
-interface IconButtonProps {
-  onClick: () => void
+type IconSize = 'large' | 'normal'
+
+interface IconButtonBaseProps {
   icon: string
-  sx?: SxProps<Theme>
+  onClick?: () => void
+  iconSize?: IconSize
   className?: string
-  iconSize?: 'large' | 'normal'
+}
+
+interface IconButtonProps extends IconButtonBaseProps {
+  sx?: SxProps<Theme>
 }
 
 export const IconButton = (props: IconButtonProps) => {
@@ -19,7 +24,16 @@ export const IconButton = (props: IconButtonProps) => {
         ...props.sx,
       }}
     >
-      <div className={`${props.icon} ${props.iconSize === 'large' ? 'w-8 h-8' : 'w-6 h-6'}`}></div>
+      <IconButtonBase icon={props.icon} iconSize={props.iconSize} />
     </Box>
   )
 }
+
+export const IconButtonBase = (props: IconButtonBaseProps) => (
+  <div
+    onClick={props.onClick}
+    className={`cursor-pointer ${props.icon} ${props.className ? props.className : ''} ${
+      props.iconSize === 'large' ? 'w-8 h-8' : 'w-6 h-6'
+    }`}
+  ></div>
+)
