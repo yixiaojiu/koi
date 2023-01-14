@@ -4,6 +4,8 @@ import { observer } from 'mobx-react-lite'
 import { Progress } from '@/pages/anime/component/player/Progress'
 import { IconButtonBase } from '@/components/button/IconButton'
 import { playerStore } from '@/pages/anime/store/player.store'
+import { textColorClassNames } from './constant'
+import { iconMap } from './utils'
 
 interface Props {
   className?: string
@@ -11,11 +13,9 @@ interface Props {
   onClick?: MouseEventHandler
 }
 
-const textColorClassNames = 'text-white/[0.7] hover:text-white'
-
 export const PlayerControler = observer((props: Props) => {
   const [player] = useState(() => playerStore)
-  useVideoControl(props.videoRef, player)
+  const { divideTime, durationTime } = useVideoControl(props.videoRef, player)
   return (
     <div
       onClick={props.onClick}
@@ -26,12 +26,37 @@ export const PlayerControler = observer((props: Props) => {
         <div className="flex items-center gap-3">
           <IconButtonBase
             onClick={() => player.togglePaused()}
-            icon="i-ic-round-play-arrow"
+            icon={iconMap.playStateIcon(player.paused)}
             iconSize="large"
             className={`${textColorClassNames}`}
           />
-          <IconButtonBase icon="i-ic-round-skip-next" iconSize="large" className={`${textColorClassNames}`} />
-          <div></div>
+          <IconButtonBase
+            icon="i-ic-round-skip-next"
+            iconSize="large"
+            className={`${textColorClassNames} hover:animate-[icon-hover_0.8s_forwards]`}
+          />
+          <div className={`${textColorClassNames} select-none`}>
+            <span>{divideTime}</span>
+            <span className="mx-1">/</span>
+            <span>{durationTime}</span>
+          </div>
+        </div>
+        <div className="flex items-center gap-6">
+          <IconButtonBase
+            icon={iconMap.volumeIcon(player.volume)}
+            iconSize="normal"
+            className={`${textColorClassNames}`}
+          />
+          <IconButtonBase
+            icon="i-ic-round-picture-in-picture"
+            iconSize="normal"
+            className={`${textColorClassNames} hover:animate-[icon-hover_0.8s_forwards]`}
+          />
+          <IconButtonBase
+            icon={iconMap.fullScreenIcon(player.isFullScreen)}
+            iconSize="large"
+            className={`${textColorClassNames} hover:animate-[icon-hover_0.8s_forwards]`}
+          />
         </div>
       </div>
     </div>

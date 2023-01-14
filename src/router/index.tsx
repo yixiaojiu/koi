@@ -1,13 +1,14 @@
-import type { LazyExoticComponent, RefObject } from 'react'
 import { Suspense, lazy, createRef } from 'react'
 import { RouterProvider, createHashRouter, IndexRouteObject, NonIndexRouteObject } from 'react-router-dom'
 import { RouterGuard } from '@/router/guard/routerGuard'
 import { Override } from '@/shared/types/utils'
 import { Navigate } from '@/components/navigate/Navigate'
+import type { NodeRef } from '@/shared/types/utils'
+import type { LazyExoticComponent } from 'react'
 
 export type CustomNonIndexRouteObject = Override<
   NonIndexRouteObject,
-  { children?: CustomRouteObject[]; nodeRef?: RefObject<Element> }
+  { children?: CustomRouteObject[]; nodeRef?: NodeRef }
 >
 
 type CustomRouteObject = IndexRouteObject | CustomNonIndexRouteObject

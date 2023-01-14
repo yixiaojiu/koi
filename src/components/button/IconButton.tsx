@@ -1,11 +1,12 @@
 import { Box } from '@mui/material'
+import type { MouseEventHandler } from 'react'
 import type { SxProps, Theme } from '@mui/material'
 
 type IconSize = 'large' | 'normal'
 
 interface IconButtonBaseProps {
   icon: string
-  onClick?: () => void
+  onClick?: MouseEventHandler
   iconSize?: IconSize
   className?: string
 }

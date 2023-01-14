@@ -1,0 +1,7 @@
+.fade-right-enter-active {
+  animation: fadeInRight 0.3s both;
+}
+.fade-right-exit-active {
+  opacity: 0;
+  animation: fadeOutRight 0.3s both;
+}

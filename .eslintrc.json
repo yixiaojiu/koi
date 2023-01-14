@@ -25,7 +25,8 @@
     "@typescript-eslint/ban-types": "off",
     "react-hooks/rules-of-hooks": "warn", // Checks rules of Hooks
     "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies,
-    "no-debugger": "off"
+    "no-debugger": "off",
+    "@typescript-eslint/no-this-alias": "off"
   },
   "settings": {
     "react": {

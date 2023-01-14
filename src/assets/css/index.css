@@ -1,3 +1,6 @@
+@import url(./animate.css);
+@import url(./animate-class.css);
+
 @font-face {
   font-family: 'SmileySans';
   src: url('@/assets/font/SmileySans-Oblique.otf.woff2') format('woff2'),

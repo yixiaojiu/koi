@@ -20,8 +20,7 @@ export default () => {
           navigate(-1)
         }}
       />
-      <div className="mt-6 relative rounded-3xl overflow-hidden aspect-video bg-black">
-        {AnimeIsLoading || videoIsLoading ? <PageLoading /> : null}
+      <div className="mt-6 rounded-3xl overflow-hidden aspect-video bg-black">
         <Player src={videoInfo?.videoUrl} />
       </div>
       <div className="mt-10 rounded-3xl bg-[var(--bg-color)]">

@@ -5,6 +5,7 @@ import { observer } from 'mobx-react-lite'
 import { playerStore } from '@/pages/anime/store/player.store'
 import { PlayerControler } from '@/pages/anime/component/player/PlayerControler'
 import { stopPropagation } from '@/shared/utils/index'
+import { MessageProvider, useMessage } from '@/components/message/Message'
 
 interface Props {
   src: string | undefined
@@ -18,6 +19,8 @@ const PausedIcon = observer(() =>
 export const Player = (props: Props) => {
   const videoRef = useRef<HTMLVideoElement | null>(null)
   useVideoInit(videoRef, props.src)
+  const { message } = useMessage(3000)
+
   return (
     <div
       onClick={() => playerStore.togglePaused()}
@@ -25,6 +28,7 @@ export const Player = (props: Props) => {
     >
       <video className="absolute-init" ref={videoRef} />
       <PausedIcon />
+      <MessageProvider message={message} className="bottom-18 left-10" />
       <PlayerControler videoRef={videoRef} className="bottom-3" onClick={stopPropagation} />
     </div>
   )
