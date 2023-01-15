@@ -3,13 +3,15 @@ import { useNavigate } from 'react-router-dom'
 import { Player } from '@/pages/anime/component/player/Player'
 import { ComicTab } from '@/pages/anime/component/comic-tab/ComicTab'
 import { useParams } from 'react-router-dom'
-import { PageLoading } from '@/components/loading/PageLoading'
 import { useRequest } from '@/pages/anime/hooks'
+import { MessageContext } from './store/messageContext'
+import { useMessage } from '@/components/message/Message'
 
 export default () => {
   const navigate = useNavigate()
   const params = useParams<{ id: string }>()
-  const { AnimeIsLoading, animeInfo, videoInfo, videoIsLoading } = useRequest(params.id!)
+  const { animeInfo, videoInfo, loadingMessage } = useRequest(params.id!)
+  const { message, addMessage, removeMessage, clearMessages } = useMessage(3000)
 
   return (
     <div className="min-h-full bg-[var(--box-bg-color)] relative px-8 py-4">
@@ -21,7 +23,9 @@ export default () => {
         }}
       />
       <div className="mt-6 rounded-3xl overflow-hidden aspect-video bg-black">
-        <Player src={videoInfo?.videoUrl} />
+        <MessageContext.Provider value={{ loadingMessage, message, addMessage, removeMessage, clearMessages }}>
+          <Player src={videoInfo?.videoUrl} />
+        </MessageContext.Provider>
       </div>
       <div className="mt-10 rounded-3xl bg-[var(--bg-color)]">
         <ComicTab />

@@ -22,7 +22,7 @@ export const useDocumentTitle = (title: string | undefined) => {
 }
 
 export const useRequest = (id: string) => {
-  const { data: animeInfo, isLoading: AnimeIsLoading } = useQuery(['anime', id], async ({ queryKey }) => {
+  const { data: animeInfo, isLoading: animeIsLoading } = useQuery(['anime', id], async ({ queryKey }) => {
     const { data: res } = await getAnime(queryKey[1]!)
     return res.data
   })
@@ -43,7 +43,6 @@ export const useRequest = (id: string) => {
   return {
     animeInfo,
     videoInfo,
-    AnimeIsLoading,
-    videoIsLoading,
+    loadingMessage: animeIsLoading || videoIsLoading ? '正在拼命请求视频🍔' : '已获得视频地址🥗',
   }
 }

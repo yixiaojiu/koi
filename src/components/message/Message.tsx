@@ -1,6 +1,6 @@
 import { createRef, ReactElement, useRef, useState, useCallback } from 'react'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
-import type { NodeRef } from '@/shared/types/utils'
+import type { NodeRef, ClassNameProps } from '@/shared/types/utils'
 
 interface Props {
   className?: string
@@ -8,14 +8,25 @@ interface Props {
 }
 
 export type MessageElement = ReactElement | string | number
+export type AddMessageFunc = (element: MessageElement, customId?: number | string, permanent?: boolean) => void
+export type RemoveMessageFunc = (id: number) => void
+export type ClearMessagesFunc = () => void
 
 export interface MessageItem {
-  id: number
+  id: number | string
   nodeRef: NodeRef<HTMLDivElement>
   element: MessageElement
   permanent?: boolean
   timer?: NodeJS.Timeout
 }
+
+interface MessageContentProps extends ClassNameProps {
+  children?: MessageElement
+}
+
+export const MessageContent = (props: MessageContentProps) => (
+  <div className={`text-gray my-2 ${props.className ? props.className : ''}`}>{props.children}</div>
+)
 
 export const MessageProvider = (props: Props) => {
   return (
@@ -33,7 +44,7 @@ export const useMessage = (timeout = 2000) => {
   const id = useRef(1)
   const [message, setMessage] = useState<MessageItem[]>([])
 
-  const removeMessage = useCallback((id: number) => {
+  const removeMessage = useCallback<RemoveMessageFunc>((id) => {
     setMessage((message) =>
       message.filter((item) => {
         if (item.id !== id) {
@@ -46,8 +57,8 @@ export const useMessage = (timeout = 2000) => {
     )
   }, [])
 
-  const addMessage = useCallback(
-    (element: MessageElement, permanent?: boolean) => {
+  const addMessage = useCallback<AddMessageFunc>(
+    (element, customId, permanent) => {
       const tempId = id.current
       let timer: NodeJS.Timeout
       if (!permanent) {
@@ -57,13 +68,13 @@ export const useMessage = (timeout = 2000) => {
       }
       setMessage((message) => {
         id.current++
-        return [...message, { id: tempId, nodeRef: createRef(), permanent, timer, element: <p>{element}</p> }]
+        return [...message, { id: customId || tempId, nodeRef: createRef(), permanent, timer, element }]
       })
     },
-    [timeout]
+    [timeout, removeMessage]
   )
 
-  const clearMessages = useCallback(() => {
+  const clearMessages = useCallback<ClearMessagesFunc>(() => {
     setMessage(() => [])
   }, [])
 

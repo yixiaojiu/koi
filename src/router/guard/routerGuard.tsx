@@ -18,7 +18,6 @@ export const RouterGuard = observer(() => {
   //  Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect,
   //  but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.%s
   const currentOutlet = useOutlet()
-  debugger
   const { nodeRef } = (routes[0].children!.find((route) => route.path === location.pathname) ?? {
     nodeRef: null,
   }) as CustomNonIndexRouteObject
