@@ -5,7 +5,7 @@ import { observer } from 'mobx-react-lite'
 import { playerStore } from '@/pages/anime/store/player.store'
 import { PlayerControler } from '@/pages/anime/component/player/PlayerControler'
 import { stopPropagation } from '@/shared/utils/index'
-import { MessageProvider, MessageContent } from '@/components/message/Message'
+import { MessageProvider } from '@/components/message/Message'
 import { MessageContext } from '@/pages/anime/store/messageContext'
 import { LoadingGirl } from '@/components/loading/LoadingGirl'
 import { useMounted } from '@/shared/hook/useMounted'
@@ -28,7 +28,7 @@ export const Player = (props: Props) => {
     addMessage!(<LoadingGirl />, LOADING_ID, true)
   })
   useEffect(() => {
-    addMessage!(<MessageContent>{loadingMessage!}</MessageContent>)
+    addMessage!(loadingMessage!)
   }, [loadingMessage])
 
   return (

@@ -9,7 +9,7 @@ interface Props {
 
 export type MessageElement = ReactElement | string | number
 export type AddMessageFunc = (element: MessageElement, customId?: number | string, permanent?: boolean) => void
-export type RemoveMessageFunc = (id: number) => void
+export type RemoveMessageFunc = (id: number | string) => void
 export type ClearMessagesFunc = () => void
 
 export interface MessageItem {
@@ -25,7 +25,13 @@ interface MessageContentProps extends ClassNameProps {
 }
 
 export const MessageContent = (props: MessageContentProps) => (
-  <div className={`text-gray my-2 ${props.className ? props.className : ''}`}>{props.children}</div>
+  <div
+    className={`text-white my-2 text-sm p-2 bg-black/[0.3] rounded-1 text-center  ${
+      props.className ? props.className : ''
+    }`}
+  >
+    {props.children}
+  </div>
 )
 
 export const MessageProvider = (props: Props) => {
@@ -68,7 +74,16 @@ export const useMessage = (timeout = 2000) => {
       }
       setMessage((message) => {
         id.current++
-        return [...message, { id: customId || tempId, nodeRef: createRef(), permanent, timer, element }]
+        return [
+          ...message,
+          {
+            id: customId || tempId,
+            nodeRef: createRef(),
+            permanent,
+            timer,
+            element: typeof element === 'string' ? <MessageContent>{element}</MessageContent> : element,
+          },
+        ]
       })
     },
     [timeout, removeMessage]

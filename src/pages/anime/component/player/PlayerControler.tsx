@@ -35,7 +35,7 @@ export const PlayerControler = observer((props: Props) => {
             iconSize="large"
             className={`${textColorClassNames} hover:animate-[icon-hover_0.8s_forwards]`}
           />
-          <div className={`${textColorClassNames} select-none`}>
+          <div className={`${textColorClassNames} select-none text-sm`}>
             <span>{divideTime}</span>
             <span className="mx-1">/</span>
             <span>{durationTime}</span>
