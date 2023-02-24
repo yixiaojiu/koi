@@ -3,7 +3,7 @@ import { MutableRefObject, useEffect } from 'react'
 
 type SourceType = 'hls' | 'mp4'
 
-export const useVideoInit = (videoRef: MutableRefObject<HTMLVideoElement | null>, src: string | undefined) => {
+export const useVideoInit = (videoRef: MutableRefObject<HTMLVideoElement | null>, src?: string) => {
   const hls = new Hls()
   useEffect(() => {
     if (!src) {

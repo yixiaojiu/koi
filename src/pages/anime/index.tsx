@@ -11,7 +11,7 @@ export default () => {
   const navigate = useNavigate()
   const params = useParams<{ id: string }>()
   const { animeInfo, videoInfo, loadingMessage } = useRequest(params.id!)
-  const { message, addMessage, removeMessage, clearMessages } = useMessage(3000)
+  const { messages, addMessage, removeMessage, clearMessages } = useMessage(3000)
 
   return (
     <div className="min-h-full bg-[var(--box-bg-color)] relative px-8 py-4">
@@ -23,7 +23,7 @@ export default () => {
         }}
       />
       <div className="mt-6 rounded-3xl overflow-hidden aspect-video bg-black">
-        <MessageContext.Provider value={{ loadingMessage, message, addMessage, removeMessage, clearMessages }}>
+        <MessageContext.Provider value={{ loadingMessage, messages, addMessage, removeMessage, clearMessages }}>
           <Player src={videoInfo?.videoUrl} />
         </MessageContext.Provider>
       </div>

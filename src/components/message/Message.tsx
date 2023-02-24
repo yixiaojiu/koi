@@ -4,7 +4,7 @@ import type { NodeRef, ClassNameProps } from '@/shared/types/utils'
 
 interface Props {
   className?: string
-  message: MessageItem[]
+  messages: MessageItem[]
 }
 
 export type MessageElement = ReactElement | string | number
@@ -37,7 +37,7 @@ export const MessageContent = (props: MessageContentProps) => (
 export const MessageProvider = (props: Props) => {
   return (
     <TransitionGroup className={`${props.className ? props.className : ''}`}>
-      {props.message.map(({ id, nodeRef, element }) => (
+      {props.messages.map(({ id, nodeRef, element }) => (
         <CSSTransition key={id} nodeRef={nodeRef} timeout={300} classNames="fade-right">
           <div ref={nodeRef}>{element}</div>
         </CSSTransition>
@@ -48,10 +48,10 @@ export const MessageProvider = (props: Props) => {
 
 export const useMessage = (timeout = 2000) => {
   const id = useRef(1)
-  const [message, setMessage] = useState<MessageItem[]>([])
+  const [messages, setMessages] = useState<MessageItem[]>([])
 
   const removeMessage = useCallback<RemoveMessageFunc>((id) => {
-    setMessage((message) =>
+    setMessages((message) =>
       message.filter((item) => {
         if (item.id !== id) {
           return true
@@ -72,7 +72,7 @@ export const useMessage = (timeout = 2000) => {
           removeMessage(tempId)
         }, timeout)
       }
-      setMessage((message) => {
+      setMessages((message) => {
         id.current++
         return [
           ...message,
@@ -90,11 +90,11 @@ export const useMessage = (timeout = 2000) => {
   )
 
   const clearMessages = useCallback<ClearMessagesFunc>(() => {
-    setMessage(() => [])
+    setMessages(() => [])
   }, [])
 
   return {
-    message,
+    messages,
     addMessage,
     removeMessage,
     clearMessages,

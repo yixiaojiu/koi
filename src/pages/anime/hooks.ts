@@ -1,11 +1,10 @@
 import { useEffect, useMemo } from 'react'
 import { AnimeVideoItem } from '@/service/types/getAnime'
 import { setTitle } from '@/shared/utils/title'
-import { useUpdate } from '@/shared/hook/useUpdate'
 import { useQuery } from '@tanstack/react-query'
 import { getAnime, getVideo } from '@/service/api/anime'
 
-export const useVideoItem = (playLists: AnimeVideoItem[][] | undefined) => {
+export const useVideoItem = (playLists?: AnimeVideoItem[][]) => {
   return useMemo(() => {
     if (!playLists) {
       return

@@ -9,6 +9,7 @@ import { MessageProvider } from '@/components/message/Message'
 import { MessageContext } from '@/pages/anime/store/messageContext'
 import { LoadingGirl } from '@/components/loading/LoadingGirl'
 import { useMounted } from '@/shared/hook/useMounted'
+import { togglePaused } from '@/pages/anime/component/player/utils'
 import { LOADING_ID } from './constant'
 
 interface Props {
@@ -23,7 +24,7 @@ const PausedIcon = observer(() =>
 export const Player = (props: Props) => {
   const videoRef = useRef<HTMLVideoElement | null>(null)
   useVideoInit(videoRef, props.src)
-  const { message, loadingMessage, addMessage } = useContext(MessageContext)
+  const { messages, loadingMessage, addMessage } = useContext(MessageContext)
   useMounted(() => {
     addMessage!(<LoadingGirl />, LOADING_ID, true)
   })
@@ -33,12 +34,12 @@ export const Player = (props: Props) => {
 
   return (
     <div
-      onClick={() => playerStore.togglePaused()}
+      onClick={() => togglePaused(playerStore)}
       className={` aspect-video relative overflow-hidden ${props.className ? props.className : ''}`}
     >
       <video className="absolute-init" ref={videoRef} />
       <PausedIcon />
-      <MessageProvider message={message!} className="absolute bottom-20 left-6" />
+      <MessageProvider messages={messages!} className="absolute bottom-20 left-6" />
       <PlayerControler videoRef={videoRef} className="bottom-3" onClick={stopPropagation} />
     </div>
   )

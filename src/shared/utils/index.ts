@@ -23,6 +23,7 @@ export function debounce<T extends Fn>(fn: T, wait?: number) {
     }, wait)
   }
 }
+
 export function thorttle<T extends Fn>(fn: T, wait?: number) {
   let timer: NodeJS.Timeout | null
   return function (this: any, ...args: Parameters<T>) {

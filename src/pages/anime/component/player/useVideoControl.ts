@@ -1,16 +1,31 @@
-import { MutableRefObject, useEffect, useState, useCallback, useContext } from 'react'
+import { MutableRefObject, useEffect, useState, useCallback, useContext, useMemo } from 'react'
 import { PlayerStore } from '@/pages/anime/store/player.store'
 import { thorttle } from '@/shared/utils'
 import { MessageContext } from '@/pages/anime/store/messageContext'
 import { LOADING_ID } from './constant'
 
 export const useVideoControl = (videoRef: MutableRefObject<HTMLVideoElement | null>, player: PlayerStore) => {
-  const [divideTime, setDivideTime] = useState('00:00')
-  const [durationTime, setDurationTime] = useState('00:00')
+  const [playedTime, setPlayedTime] = useState(0)
+  const [durationTime, setDurationTime] = useState(0)
+  const [bufferedTime, setBufferedTime] = useState(0)
   const [isError, setIsError] = useState(false)
   const [isWaiting, setIsWaiting] = useState(false)
 
   const { addMessage, clearMessages, removeMessage } = useContext(MessageContext)
+
+  const progressPercentage = useMemo(() => {
+    if (durationTime === 0) {
+      return {
+        playedPercentage: 0,
+        bufferedPercentage: 0,
+      }
+    } else {
+      return {
+        playedPercentage: playedTime / durationTime,
+        bufferedPercentage: bufferedTime / durationTime,
+      }
+    }
+  }, [playedTime, durationTime, bufferedTime])
 
   useEffect(() => {
     if (player.paused) {
@@ -22,14 +37,14 @@ export const useVideoControl = (videoRef: MutableRefObject<HTMLVideoElement | nu
 
   const createEventHandler = useCallback(() => {
     const timeupdate = thorttle(() => {
-      setDivideTime((divideTime) => handleTime(videoRef.current!.currentTime, hasHours(divideTime)))
-    }, 600)
+      setPlayedTime(videoRef.current!.currentTime)
+      setBufferedTime(videoRef.current!.buffered.end(0))
+    }, 300)
 
-    const error = (e: ErrorEvent) => {
+    const error = () => {
       setIsError(true)
       removeMessage!(LOADING_ID)
       addMessage!('视频加载出错😥')
-      console.log(e)
     }
 
     const waiting = () => {
@@ -42,9 +57,7 @@ export const useVideoControl = (videoRef: MutableRefObject<HTMLVideoElement | nu
 
     const canplay = () => {
       clearMessages!()
-      const durationTimeStr = handleTime(videoRef.current!.duration)
-      setDurationTime(durationTimeStr)
-      setDivideTime(handleTime(0, hasHours(durationTime)))
+      setDurationTime(videoRef.current!.duration)
     }
 
     return {
@@ -84,10 +97,11 @@ export const useVideoControl = (videoRef: MutableRefObject<HTMLVideoElement | nu
   }, [videoRef])
 
   return {
-    divideTime,
-    durationTime,
+    divideTimeFormat: handleTime(playedTime, hasHours(handleTime(durationTime))),
+    durationTimeFormat: handleTime(durationTime),
     isError,
     isWaiting,
+    ...progressPercentage,
   }
 }
 

@@ -26,7 +26,8 @@
     "react-hooks/rules-of-hooks": "warn", // Checks rules of Hooks
     "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies,
     "no-debugger": "off",
-    "@typescript-eslint/no-this-alias": "off"
+    "@typescript-eslint/no-this-alias": "off",
+    "max-lines": ["error", { "max": 300, "skipComments": true, "skipBlankLines": true }]
   },
   "settings": {
     "react": {

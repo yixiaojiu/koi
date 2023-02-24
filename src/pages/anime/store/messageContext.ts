@@ -6,7 +6,7 @@ interface MessageContext {
   addMessage?: AddMessageFunc
   removeMessage?: RemoveMessageFunc
   clearMessages?: ClearMessagesFunc
-  message?: MessageItem[]
+  messages?: MessageItem[]
 }
 
 export const MessageContext = createContext<MessageContext>({})
