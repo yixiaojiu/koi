@@ -1,13 +1,5 @@
-import { ChildrenProps } from '@/shared/types/utils'
-import { Box } from '@mui/material'
+import type { PropsWithChildren } from 'react'
 
-export const ScrollbarBox = (props: ChildrenProps) => (
-  <Box
-    className="h-full overflow-x-hidden overflow-y-auto"
-    sx={{
-      backgroundColor: 'background.default',
-    }}
-  >
-    {props.children}
-  </Box>
+export const ScrollbarBox = (props: PropsWithChildren) => (
+  <div className="h-full overflow-x-hidden overflow-y-auto bg-[var(--aside-bg-color)]">{props.children}</div>
 )

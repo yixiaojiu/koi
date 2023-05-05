@@ -17,16 +17,12 @@ interface IconButtonProps extends IconButtonBaseProps {
 
 export const IconButton = (props: IconButtonProps) => {
   return (
-    <Box
+    <button
       onClick={props.onClick}
-      className={` w-10 h-10 center cursor-pointer ${props.className ? props.className : ''} `}
-      sx={{
-        color: 'text.primary',
-        ...props.sx,
-      }}
+      className={` w-10 h-10 center cursor-pointer text-[var(--font-color)] ${props.className ? props.className : ''} `}
     >
       <IconButtonBase icon={props.icon} iconSize={props.iconSize} />
-    </Box>
+    </button>
   )
 }
 

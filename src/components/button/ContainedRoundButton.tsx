@@ -1,21 +1,11 @@
-import type { ChildrenProps } from '@/shared/types/utils'
-import { Box } from '@mui/material'
+import type { PropsWithChildren } from 'react'
 
-interface Props extends ChildrenProps {
+interface ContainedRoundButtonProps {
   onClick?: () => void
 }
 
-export const ContainedRoundButton = (props: Props) => (
-  <Box
-    component="button"
-    onClick={props.onClick}
-    className="rounded-full center text-slate-100 text-sm"
-    sx={{
-      padding: '6px 22px',
-      fontFamily: 'SmileySans',
-      backgroundColor: 'background.paper',
-    }}
-  >
-    {props.children}
-  </Box>
+export const ContainedRoundButton = ({ children, onClick }: PropsWithChildren<ContainedRoundButtonProps>) => (
+  <button onClick={onClick} className="rounded-full center text-slate-100 text-sm bg-[var(--primary-color)] px-[22px]">
+    {children}
+  </button>
 )

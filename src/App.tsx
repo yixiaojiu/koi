@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box'
 import ThemeConfig from './theme'
 import { Router } from '@/router'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
@@ -28,10 +27,10 @@ function App() {
   return (
     <ThemeConfig>
       <QueryClientProvider client={queryClient}>
-        <Box className="h-screen flex flex-col overflow-hidden bg-[var(--bg-color)] text-[var(--font-color)] min-w-[1100px]">
+        <div className="h-screen flex flex-col overflow-hidden bg-[var(--bg-color)] text-[var(--font-color)] min-w-[1100px]">
           <Live2dControler />
           <Router />
-        </Box>
+        </div>
       </QueryClientProvider>
     </ThemeConfig>
   )

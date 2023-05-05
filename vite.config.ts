@@ -26,6 +26,7 @@ export default defineConfig({
         presetAttributify(),
         presetWebFonts({
           provider: 'none',
+          // the classname of this is 'font-smiley'
           fonts: {
             smiley: 'SmileySans',
           },

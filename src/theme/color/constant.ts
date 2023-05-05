@@ -1,16 +1,8 @@
 // 黑色主题
-export const THEME_DARK = ['#1e1d2b', '#2f3042', '#222433', '#fff', '#ffffffa3', 'rgba(104, 198, 189, 1)', '#f5073e']
+export const THEME_DARK = ['#1e1d2b', '#2f3042', '#222433', '#fff', '#ffffffa3', '#68c6bd', '#f5073e']
 
 // 粉色主题
-export const THEME_PINK = [
-  'rgba(239, 239, 244, 1)',
-  '#fff',
-  '#fff',
-  'rgba(255, 180, 190, 1)',
-  'rgba(190, 190, 190, 1)',
-  'rgba(255, 140, 140, 1)',
-  '#f5073e',
-]
+export const THEME_PINK = ['#efeff4', '#fff', '#fff', '#ffb4be', '#bebebe', '#ff8c8c', '#f5073e']
 
 export interface ThemeColorVar {
   /** 形参或key */

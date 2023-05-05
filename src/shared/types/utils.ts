@@ -1,8 +1,4 @@
-import type { ReactNode, RefObject } from 'react'
-
-export interface ChildrenProps {
-  children: ReactNode
-}
+import type { RefObject } from 'react'
 
 export interface ClassNameProps {
   className?: string

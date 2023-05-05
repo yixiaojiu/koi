@@ -20,7 +20,12 @@ html {
   transition: background-color 0.3s ease;
 }
 
-* {
+div,
+p,
+span,
+h1,
+h2,
+h3 {
   font-family: SmileySans, 'Roboto', 'Helvetica', 'Arial', sans-serif;
 }
 
